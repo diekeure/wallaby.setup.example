@@ -1,9 +1,0 @@
-{
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../../dist/out-tsc/apps/polpo-classroom-web-e2e",
-    "module": "commonjs",
-    "target": "es5",
-    "types": ["jest", "node"]
-  }
-}
