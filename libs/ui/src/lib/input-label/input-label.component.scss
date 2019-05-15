@@ -1,0 +1,62 @@
+.ui_input-label {
+  padding: 15px 20px 15px 20px;
+  &__title {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 0 5px 0;
+    line-height: normal;
+  }
+  &__text {
+    &__label-holder {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 3px 11px 0 5px;
+      &__label {
+        font-size: 14px;
+        font-weight: 700;
+      }
+      &__edit-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+    }
+  }
+  &__input-holder {
+    margin-right: 11px;
+    &__input {
+      width: 100%;
+    }
+    &__icons-holder {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      padding: 4px 0 0 0;
+      &__confirm-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+      &__cancel-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

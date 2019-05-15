@@ -1,0 +1,21 @@
+{
+  "editor.rulers": [140],
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "on",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.trimAutoWhitespace": true,
+  "editor.wordWrap": "off",
+  "typescript.preferences.quoteStyle": "single",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "html.format.wrapAttributes": "force-aligned",
+  "eslint.enable": false,
+  "todo-tree.tags": ["TODO", "Todo", "todo", "Fixme", "fixme", "FIXME"],
+  "todo-tree.showCountsInTree": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

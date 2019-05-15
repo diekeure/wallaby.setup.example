@@ -1,0 +1,30 @@
+<div class="ui_input-label">
+  <div *ngIf="titleText" class="ui_input-label__title">{{ titleText }}</div>
+  <div *ngIf="!editing" class="ui_input-label__text">
+    <div class="ui_input-label__text__label-holder">
+      <div class="ui_input-label__text__label-holder__label">{{ text }}</div>
+      <div
+        *ngIf="editable"
+        class="ui_input-label__text__label-holder__edit-icon polpo-presentatie"
+        (click)="edit()"
+      ></div>
+    </div>
+  </div>
+  <div *ngIf="editing" class="ui_input-label__input-holder">
+    <input
+      class="ui_input-label__input-holder__input"
+      type="text"
+      [formControl]="inputControl"
+    />
+    <div class="ui_input-label__input-holder__icons-holder">
+      <div
+        class="ui_input-label__input-holder__icons-holder__confirm-icon polpo-presentatie"
+        (click)="save()"
+      ></div>
+      <div
+        class="ui_input-label__input-holder__icons-holder__cancel-icon polpo-presentatie"
+        (click)="cancel()"
+      ></div>
+    </div>
+  </div>
+</div>

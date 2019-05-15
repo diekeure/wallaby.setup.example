@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  flex-flow: row;
+  align-content: stretch;
+  height: 100%;
+}
+
+mat-drawer-container {
+  flex: 0 0 100%;
+}
+
+.ui-shell__right {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  .ui-shell__top {
+    flex: 0 0 auto;
+  }
+
+  .ui-shell__body {
+    overflow-y: auto;
+    flex: 0 1 auto;
+  }
+
+  .ui-shell__filler {
+    flex: 1 1 100%;
+    min-width: 0px;
+    min-height: 0px;
+  }
+}
+
+.ui-shell__left {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  .ui-shell__logo {
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .ui-shell__left__content {
+    overflow-y: auto;
+    flex: 0 1 auto;
+  }
+
+  .ui-shell__filler {
+    flex: 1 1 100%;
+    min-width: 0px;
+    min-height: 0px;
+  }
+}

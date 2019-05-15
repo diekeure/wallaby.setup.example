@@ -1,0 +1,8 @@
+{
+  "singleQuote": true,
+  "htmlWhitespaceSensitivity": "strict",
+  "tabWidth": 2,
+  "useTabs": false,
+  "proseWrap": "never",
+  "printWidth": 80
+}

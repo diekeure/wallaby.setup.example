@@ -1,0 +1,209 @@
+// main body
+$ui-primary-bg-color: #fff !default;
+$ui-primary-font-color: #000 !default;
+$ui-primary-font-size: 16px !default;
+$ui-primary-color-accent: #fff !default; // link, button (borders)
+$ui-primary-font-color-2: #aaa !default; // subtitle
+$ui-primary-font-family: 'Helvetica', 'Arial', 'Open Sans', sans-serif !default;
+$ui-primary-font-family-2: 'Lato', sans-serif !default; // title
+$ui-primary-font-family-3: 'Oswald', 'Arial Narrow', Sans-Serif !default; // list item label
+$ui-danger-bg-color: #f00 !default;
+$ui-danger-font-color: #fff !default;
+$ui-warning-bg-color: #f80 !default;
+$ui-warning-font-color: #fff !default;
+$ui-form-button-default-bg-color: #e1e5e7 !default;
+$ui-form-button-primary-bg-color: #44b0aa !default;
+
+// nav + site header (shell)
+$ui-secondary-bg-color: #fff !default;
+$ui-secondary-font-color: #000 !default;
+$ui-secondary-bg-color-accent: #f00 !default; // active button, badge
+$ui-secondary-font-color-accent: #fff !default; // link, button (borders)
+
+// panel
+$ui-tertiary-bg-color: $ui-primary-bg-color !default;
+$ui-tertiary-font-color: $ui-primary-font-color !default;
+$ui-tertiary-bg-color-2: #999 !default; // header
+$ui-tertiary-font-color-2: #fff !default; // header
+$ui-tertiary-color-accent: $ui-primary-color-accent !default;
+
+// list
+$ui-list-row-bg-title-odd: #3b3c46 !default;
+$ui-list-row-bg-title-even: #536070 !default;
+$ui-list-row-bg-odd: $ui-primary-bg-color !default;
+$ui-list-row-bg-even: #f3f3f3 !default;
+
+// forms
+$ui-form-item-bg-color: $ui-primary-bg-color !default;
+$ui-form-item-font-color: $ui-primary-font-color !default;
+$ui-form-item-border-color: $ui-primary-font-color !default;
+$ui-button-bg-color: $ui-form-button-default-bg-color !default;
+$ui-button-bg-color-1: $ui-form-button-primary-bg-color !default;
+$ui-button-bg-color-2: $ui-tertiary-bg-color !default;
+$ui-button-font-color: #fff !default;
+$ui-button-font-size: $ui-primary-font-size !default;
+$ui-form-item-padding-bottom: $ui-primary-font-size !default;
+$ui-form-actions-padding: 20px 0 0 0 !default;
+$ui-form-spacing: 5px !default;
+
+// sizes
+$ui-person-badge-size-large: 96px !default;
+$ui-person-badge-size-large-font-size: $ui-person-badge-size-large / 2 !default;
+$ui-person-badge-size-medium: 48px !default;
+$ui-person-badge-size-medium-font-size: $ui-person-badge-size-medium / 2 !default;
+$ui-person-badge-size-small: 36px !default;
+$ui-person-badge-size-small-font-size: $ui-person-badge-size-small / 2 !default;
+$ui-icon-size-large: 96px !default;
+$ui-icon-size-medium: 48px !default;
+$ui-icon-size-small: 36px !default;
+$ui-icon-size-tiny: 12px !default;
+
+// buttons
+$ui-button-padding-left: $ui-primary-font-size !default;
+$ui-button-padding-right: $ui-primary-font-size !default;
+$ui-button-padding-top: $ui-primary-font-size/2 !default;
+$ui-button-padding-bottom: $ui-primary-font-size/2 !default;
+
+// tiles and droparea
+$ui-tile-width: 280px !default;
+$ui-tile-height: 105px !default;
+
+// helper classes
+.ui-no-link {
+  cursor: inherit;
+}
+
+// import all required sass files from our libs
+@import './folder/folder.component.theme.scss';
+@import './tree-nav/tree-nav.component.theme';
+@import './file-extension/file-extension.component.scss';
+@import './editable-inline-tag-list/editable-inline-tag-list.component.theme.scss';
+@import './confirmable-select/confirmable-select.component.theme.scss';
+@import './content-preview/content-preview.component.theme.scss';
+@import './input-label/input-label.component.theme.scss';
+@import './info-panel/info-panel.component.theme.scss';
+@import './label-and-icon-button/label-and-icon-button.component.theme.scss';
+@import './period-label/period-label.component.theme.scss';
+@import './person-badge/person-badge.component.theme.scss';
+@import './person-summary-component/person-summary-component.theme.scss';
+@import './page-header/page-header.component.theme.scss';
+@import './app-bar/app-bar.component.theme.scss';
+@import './side-sheet/side-sheet.component.theme';
+@import './shell/shell.component.theme';
+@import './list-view/list-view.component.theme.scss';
+@import './content-thumbnail/content-thumbnail.component.theme.scss';
+@import './filter-text-input/filter-text-input.component.themes.scss';
+@import './button/button.component.theme.scss';
+@import './notification/notification.component.theme';
+@import './dropdown-menu/dropdown-menu.component.theme.scss';
+@import './dropdown-menu-item/dropdown-menu-item.component.theme.scss';
+@import './banner/banner.component.theme.scss';
+@import './breadcrumbs/breadcrumbs.component.theme.scss';
+@import './collapsible-sheet/collapsible-sheet.component.theme.scss';
+@import './drop-area/drop-area.component.theme.scss';
+@import './tile/tile.component.theme.scss';
+@import './manage-collection/manage-collection.component.theme.scss';
+
+@mixin ui-forms() {
+  form {
+    .mat-form-field {
+      display: block;
+
+      .mat-form-field-wrapper {
+        padding-bottom: $ui-form-item-padding-bottom;
+      }
+    }
+
+    .form-inline {
+      .mat-form-field {
+        display: inline-block;
+        margin-right: $ui-form-spacing;
+      }
+    }
+
+    .form-actions {
+      padding: $ui-form-actions-padding;
+    }
+
+    .ui-button {
+      padding: $ui-button-font-size/2 $ui-button-font-size;
+    }
+  }
+
+  .ui-button.ui-button--large {
+    margin-bottom: $ui-form-item-padding-bottom;
+  }
+}
+
+@mixin ui-content-thumbnail-button() {
+  $ui-content-thumbnail-button-color: $ui-primary-font-color-2 !default;
+  $ui-content-thumbnail-button-background-color: transparent !default;
+  $ui-content-thumbnail-button-size: 30px !default;
+  $ui-content-thumbnail-button-padding: 5px !default;
+  $ui-content-thumbnail-button-margin: 0 !default;
+
+  campus-content-thumbnail {
+    .ui-button {
+      color: $ui-content-thumbnail-button-color;
+      background-color: $ui-content-thumbnail-button-background-color;
+      padding: $ui-content-thumbnail-button-padding;
+      margin: $ui-content-thumbnail-button-margin;
+
+      .mat-icon {
+        width: $ui-content-thumbnail-button-size;
+        height: $ui-content-thumbnail-button-size;
+      }
+    }
+
+    .ui-button--disabled {
+      &,
+      &:hover {
+        background-color: $ui-content-thumbnail-button-background-color;
+      }
+    }
+  }
+}
+
+@mixin ui-icons {
+  svg {
+    pointer-events: none; //remove native tooltip
+  }
+}
+
+// create theme-mixin with each mixin from our library components
+@mixin ui-theme() {
+  @include ui-forms();
+  @include ui-icons();
+  @include ui-tree-nav();
+  @include ui-folder-theme();
+  //place desired width as optional parameter, default 84;
+  @include ui-file-extension();
+  @include ui_editable-inline-tag-list_theme();
+  @include ui_confirmable-select_theme();
+  @include ui_content-preview_theme();
+  @include ui_input-label_theme();
+  @include ui_info-panel_theme();
+  @include ui_label-and-icon-button_theme();
+  @include ui_period-label_theme();
+  @include ui_person-badge_theme();
+  @include ui-person-summary();
+  @include ui-page-header_theme();
+  @include ui-app-bar();
+  @include ui-app-shell();
+  @include ui-side-sheet();
+  @include ui-list-view();
+  @include ui-list-view-deep();
+  @include ui-content-thumbnail();
+  @include ui-filter-text-input();
+  @include ui-button();
+  @include ui-notification();
+  @include ui-dropdown-menu();
+  @include ui-dropdown-menu-item();
+  @include ui_banner_theme();
+  @include ui-breadcrumbs_theme();
+  @include ui-content-thumbnail-button();
+  @include ui-collapsible-sheet();
+  @include ui-drop-area-theme();
+  @include ui-tile();
+  @include ui-manage-collection();
+}

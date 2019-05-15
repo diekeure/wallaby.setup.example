@@ -1,0 +1,25 @@
+@mixin ui-side-sheet() {
+  $ui-side-sheet-sheet-background-color: $ui-tertiary-bg-color;
+  $ui-side-sheet-header-background-color: $ui-tertiary-bg-color-2;
+  $ui-side-sheet-header-font-color: $ui-tertiary-font-color-2;
+
+  $ui-side-sheet-title-font-family: $primary-font-family-2;
+  $ui-side-sheet-font-color: $ui-tertiary-font-color;
+
+  .ui-side-sheet {
+    &__drawer {
+      color: $ui-side-sheet-font-color;
+      background-color: $ui-side-sheet-sheet-background-color;
+    }
+
+    &__header {
+      background-color: $ui-side-sheet-header-background-color;
+      color: $ui-side-sheet-header-font-color;
+      font-family: $ui-side-sheet-title-font-family;
+
+      &__title {
+        font-family: $ui-side-sheet-title-font-family;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+:host {
+  .mat-dialog-content {
+    min-height: 33vh;
+    min-width: 40vw;
+  }
+}
+
+.ui-manage-collection {
+  &__no-results {
+    *:not(:last-child) {
+      margin-right: 5px;
+    }
+
+    a {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

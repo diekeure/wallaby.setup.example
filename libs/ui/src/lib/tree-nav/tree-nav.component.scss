@@ -1,0 +1,54 @@
+.ui-tree-nav__root {
+  display: block;
+}
+
+.ui-tree-nav__node {
+  list-style: none none outside;
+  padding: 0;
+  margin: 0;
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+
+    > i:first-child {
+      margin-right: 5px;
+    }
+  }
+
+  mat-icon {
+    line-height: 24px;
+    font-style: normal;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  &--closed {
+    > ul {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    float: right;
+
+    &:before {
+      width: 10px;
+      text-align: center;
+      margin-top: -1px;
+      margin-right: 5px;
+      margin-left: 5px;
+      display: block;
+      font-size: 30px;
+      height: auto;
+      font-weight: 300;
+      text-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<h1 class="ui-page-header ui-page-header--{{layout}}">
+  <div class="ui-page-header__icon-wrapper" *ngIf="iconClass">
+    <mat-icon [svgIcon]="iconClass"></mat-icon>
+  </div>
+  <div>
+    {{ title }} <small *ngIf="layout === 'default'">{{ subtitle }}</small>
+  </div>
+</h1>
+<h2 *ngIf="layout === 'centered'" class="ui-page-header-centered-subtitle">{{
+  subtitle
+}}</h2>

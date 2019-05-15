@@ -1,0 +1,20 @@
+<form class="ui-filter-text-input ui-filter-text-input--{{theme}}">
+  <mat-icon class="ui-filter-text-input__icon" [svgIcon]="'filter'"></mat-icon>
+  <input
+    class="ui-filter-text-input__input"
+    [class.ui-filter-text-input__input--not-empty]="input.value"
+    placeholder="{{placeholder}}"
+    name="filter-input"
+    type="text"
+    (keydown.enter)="onEnterPressed($event)"
+    [formControl]="input"
+    [autocomplete]="autocomplete"
+  />
+  <mat-icon
+    class="ui-filter-text-input__cancel"
+    [svgIcon]="'cancel'"
+    (click)="clear()"
+    aria-label="Cancel"
+  >
+  </mat-icon>
+</form>

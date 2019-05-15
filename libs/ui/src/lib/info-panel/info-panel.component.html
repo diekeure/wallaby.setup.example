@@ -1,0 +1,24 @@
+<div class="info-panel">
+  <div class="info-panel__title">
+    <div class="info-panel__title__left">
+      <mat-icon
+        class="info-panel__title__left__icon"
+        [svgIcon]="titleIcon"
+        *ngIf="titleIcon"
+      ></mat-icon>
+      <div class="info-panel__title__left__text">{{ titleText || 'Info' }}</div>
+    </div>
+    <div
+      class="info-panel__title__right"
+      [class.info-panel__title__right--linked]="titleRightRouterLink"
+      [routerLink]="titleRightRouterLink"
+      ><ng-content select="[title__right]"></ng-content
+    ></div>
+  </div>
+  <div
+    class="info-panel__body"
+    [style.flex-direction]="displayAsRows ? 'row' : 'column'"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

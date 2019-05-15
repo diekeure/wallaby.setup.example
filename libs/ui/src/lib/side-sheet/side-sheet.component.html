@@ -1,0 +1,29 @@
+<mat-drawer-container class="ui-side-sheet">
+  <mat-drawer
+    class="ui-side-sheet__drawer"
+    #sheet
+    position="end"
+    [opened]="isOpenOnInit"
+  >
+    <div class="ui-side-sheet__header">
+      <ng-content
+        select="[campusSideSheetHeader],campus-side-sheet-header"
+      ></ng-content>
+      <!--
+        when no <campus-side-sheet-header> tag is present in the parent component, display 'Info' as a default
+      -->
+      <ng-container *ngIf="!header">{{ defaultHeaderText }}</ng-container>
+      <a (click)="sheet.close()">x</a>
+    </div>
+    <div class="ui-side-sheet__body">
+      <ng-content
+        select="[campusSideSheetBody],campus-side-sheet-body"
+      ></ng-content>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content
+      select="[campusSideSheetPage],campus-side-sheet-page"
+    ></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>

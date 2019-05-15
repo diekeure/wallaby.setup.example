@@ -1,0 +1,28 @@
+@mixin ui-manage-collection() {
+  $ui-manage-collection-list_filter-font-size: $ui-primary-font-size !default;
+  $ui-manage-collection-list_recent-item-color: $ui-form-button-primary-bg-color !default;
+
+  .ui-manage-collection {
+    &__filter {
+      .ui-filter-text-input {
+        font-size: ui-manage-collection-list_filter-font-size;
+      }
+
+      input {
+        height: 24px;
+        border: none;
+      }
+
+      .mat-icon {
+        top: 2px;
+      }
+    }
+
+    &__recent-item {
+      .mat-icon,
+      p {
+        color: $ui-manage-collection-list_recent-item-color;
+      }
+    }
+  }
+}

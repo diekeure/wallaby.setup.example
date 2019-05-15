@@ -1,0 +1,42 @@
+@mixin ui-drop-area-theme() {
+  $ui-drop-area-width: $ui-tile-width !default;
+  $ui-drop-area-height: $ui-tile-height !default;
+  $ui-drop-area-background: none !default;
+  $ui-drop-area-border: 2px dashed $ui-primary-font-color-2 !default;
+  $ui-drop-area__icon-container__mat-icon-color: $ui-primary-font-color-2 !default;
+  $ui-drop-area__icon-container__mat-icon-size: $ui-icon-size-small !default;
+  $ui-drop-area__icon-container__mat-icon-margin: 15px !default;
+  $ui-drop-area__icon-container-border-radius: 50% !default;
+  $ui-drop-area__icon-container-border: $ui-drop-area-border !default;
+  $ui-drop-area__icon-container-margin: 0 0 0 15px !default;
+  $ui-drop-area__label-color: $ui-primary-font-color-2 !default;
+  $ui-drop-area__label-max-height: 75px !default;
+  $ui-drop-area__label-font-weight: 700 !default;
+  $ui-drop-area__label-font-size: $ui-primary-font-size !default;
+  $ui-drop-area__label-margin: 0 15px !default;
+
+  .ui-drop-area {
+    background: $ui-drop-area-background;
+    width: $ui-drop-area-width;
+    height: $ui-drop-area-height;
+    border: $ui-drop-area-border;
+    &__icon-container {
+      border-radius: $ui-drop-area__icon-container-border-radius;
+      border: $ui-drop-area__icon-container-border;
+      margin: $ui-drop-area__icon-container-margin;
+      mat-icon {
+        margin: $ui-drop-area__icon-container__mat-icon-margin;
+        color: $ui-drop-area__icon-container__mat-icon-color;
+        height: $ui-drop-area__icon-container__mat-icon-size;
+        width: $ui-drop-area__icon-container__mat-icon-size;
+      }
+    }
+    &__label {
+      color: $ui-drop-area__label-color;
+      font-size: $ui-drop-area__label-font-size;
+      font-weight: $ui-drop-area__label-font-weight;
+      margin: $ui-drop-area__label-margin;
+      max-height: $ui-drop-area__label-max-height;
+    }
+  }
+}

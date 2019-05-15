@@ -1,0 +1,148 @@
+@mixin ui-folder-theme() {
+  $ui-folder-color: $ui-secondary-font-color !default;
+  $ui-folder-background-color: $ui-secondary-bg-color !default;
+  $ui-folder--grid-width: 215px !default;
+  $ui-folder--grid-height: 119px !default;
+  $ui-folder--grid-margin: 16px 0 0 0 !default;
+  $ui-folder--line-height: 40px !default;
+  $ui-folder--line-margin: 0 0 5px 0 !default;
+  $ui-folder--line-border-top-width: 3px !default;
+  $ui-folder--line-border-bottom-width: 3px !default;
+  $ui-folder_icon-wrapper--grid-width: 48px !default;
+  $ui-folder_icon-wrapper--grid-height: $ui-folder_icon-wrapper--grid-width !default;
+  $ui-folder_icon-wrapper--line-width: 32px !default;
+  $ui-folder_icon-wrapper--line-height: $ui-folder_icon-wrapper--line-width !default;
+  $ui-folder_icon-wrapper-border-width: 2px !default;
+  $ui-folder_icon-wrapper-border-color: $ui-folder-color !default;
+  $ui-folder_icon--grid-width: 32px !default;
+  $ui-folder_icon--grid-height: $ui-folder_icon--grid-width !default;
+  $ui-folder_icon--line-width: 20px !default;
+  $ui-folder_icon--line-height: $ui-folder_icon--line-width !default;
+  $ui-folder_info--grid-height: 50px !default;
+  $ui-folder_badge-height: 32px !default;
+  $ui-folder_badge-background-color: $ui-primary-bg-color !default;
+  $ui-folder_badge-color: $ui-primary-font-color !default;
+  $ui-folder_badge--error-background-color: $ui-danger-bg-color !default;
+  $ui-folder_badge--error-color: $ui-danger-font-color !default;
+  $ui-folder-padding: 10px !default;
+
+  .ui-folder {
+    width: $ui-folder--grid-width;
+    height: $ui-folder--grid-height;
+    margin: $ui-folder--grid-margin;
+    color: $ui-folder-color;
+    background-color: $ui-folder-background-color;
+
+    &__header {
+      max-height: $ui-folder--grid-height - $ui-folder_info--grid-height;
+      padding: $ui-folder-padding;
+
+      &-icon {
+        &-wrapper {
+          width: $ui-folder_icon-wrapper--grid-width;
+          height: $ui-folder_icon-wrapper--grid-height;
+          border: $ui-folder_icon-wrapper-border-width solid
+            $ui-folder_icon-wrapper-border-color;
+
+          mat-icon {
+            margin: (
+                $ui-folder_icon-wrapper--grid-width -
+                  $ui-folder_icon--grid-width -
+                  $ui-folder_icon-wrapper-border-width
+              )/2
+              (
+                $ui-folder_icon-wrapper--grid-height -
+                  $ui-folder_icon--grid-height -
+                  $ui-folder_icon-wrapper-border-width
+              )/2;
+            width: $ui-folder_icon--grid-width;
+            height: $ui-folder_icon--grid-height;
+          }
+          mat-progress-spinner svg {
+            width: $ui-folder_icon-wrapper--grid-width;
+            height: $ui-folder_icon-wrapper--grid-height;
+          }
+        }
+      }
+    }
+    &__title {
+      padding-left: $ui-folder-padding;
+    }
+    &__info {
+      height: $ui-folder_info--grid-height;
+      padding: $ui-folder-padding;
+    }
+    &__badge {
+      top: -$ui-folder_badge-height/2;
+      height: $ui-folder_badge-height;
+      line-height: $ui-folder_badge-height;
+      &::before {
+        border-width: $ui-folder_badge-height/2 $ui-folder_badge-height/2
+          $ui-folder_badge-height/2 0;
+        left: -$ui-folder_badge-height/2;
+      }
+      &-number {
+        background-color: $ui-folder_badge-background-color;
+        border-color: $ui-folder_badge-background-color;
+        color: $ui-folder_badge-color;
+        margin: 0 $ui-folder_badge-height/2 0 $ui-folder_badge-height/8;
+        &::before,
+        &::after {
+          border: 1px solid $ui-folder_badge-background-color;
+        }
+        &--error {
+          background-color: $ui-folder_badge--error-background-color;
+          border-color: $ui-folder_badge--error-background-color;
+          color: $ui-folder_badge--error-color;
+        }
+      }
+    }
+    &--line {
+      height: $ui-folder--line-height;
+      margin: $ui-folder--line-margin;
+      border-top-width: $ui-folder--line-border-top-width;
+      border-bottom-width: $ui-folder--line-border-top-width;
+      .ui-folder {
+        &__wrapper {
+          margin-right: $ui-folder--line-height;
+        }
+        &__header {
+          padding-right: $ui-folder-padding;
+          &-icon {
+            &-wrapper {
+              width: $ui-folder_icon-wrapper--line-width;
+              height: $ui-folder_icon-wrapper--line-height;
+              mat-icon {
+                width: $ui-folder_icon--line-width;
+                height: $ui-folder_icon--line-height;
+                margin: (
+                  $ui-folder_icon-wrapper--line-width/2 -
+                    $ui-folder_icon--line-width/2 -
+                    $ui-folder_icon-wrapper-border-width
+                );
+              }
+              mat-progress-spinner svg {
+                width: $ui-folder_icon-wrapper--line-width;
+                height: $ui-folder_icon-wrapper--line-height;
+              }
+            }
+          }
+        }
+        &__title {
+          line-height: $ui-folder--line-height;
+        }
+        &__info {
+          padding-right: $ui-folder-padding;
+          &::after {
+            border-width: $ui-folder--line-height $ui-folder--line-height 0 0;
+            border-color: rgba(0, 0, 0, 0.2) transparent transparent;
+            right: -$ui-folder--line-height;
+          }
+        }
+      }
+    }
+  }
+  campus-folder-details {
+    display: block;
+  }
+}

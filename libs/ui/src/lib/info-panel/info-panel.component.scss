@@ -1,0 +1,23 @@
+.info-panel {
+  &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    &__left,
+    &__right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    &__right--linked {
+      cursor: pointer;
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}

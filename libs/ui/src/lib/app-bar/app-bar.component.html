@@ -1,0 +1,12 @@
+<header class="ui-app-bar">
+  <section class="ui-app-bar__section ui-app-bar__section--align-start">
+    <ng-content select="[bar__left]"></ng-content>
+    <ng-content></ng-content>
+  </section>
+  <section class="ui-app-bar__section ui-app-bar__section--align-center">
+    <ng-content select="[bar__center]"></ng-content>
+  </section>
+  <section class="ui-app-bar__section ui-app-bar__section--align-end">
+    <ng-content select="[bar__right]"></ng-content>
+  </section>
+</header>

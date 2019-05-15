@@ -1,0 +1,20 @@
+<div class="ui_content-preview">
+  <div *ngIf="preview" class="ui_content-preview__preview">
+    <img class="ui_content-preview__preview__img" [src]="preview" />
+  </div>
+  <div class="ui_content-preview__product">
+    <ng-content select="[type]"></ng-content>
+    <div class="ui_content-preview__product__details">
+      <div class="ui_content-preview__product__details__title">{{
+        titleText
+      }}</div>
+      <ng-content select="[icon]"></ng-content>
+      <div class="ui_content-preview__product__details__description">{{
+        description
+      }}</div>
+    </div>
+  </div>
+  <div class="ui_content-preview__badges">
+    <ng-content select="[badge]"></ng-content>
+  </div>
+</div>

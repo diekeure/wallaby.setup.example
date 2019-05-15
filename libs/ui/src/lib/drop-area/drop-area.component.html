@@ -1,0 +1,13 @@
+<div
+  class="ui-drop-area"
+  [class.ui-drop-area--justify-content-left]="
+    forceJustifyContentLeft || (!!icon && !!label)
+  "
+  (dragenter)="dragging = true"
+  (dragleave)="dragging = false"
+  [ngClass]="dragOverClassName"
+>
+  <div *ngIf="icon" class="ui-drop-area__icon-container">
+    <mat-icon [svgIcon]="icon"></mat-icon> </div
+  ><span class="ui-drop-area__label">{{ label }}</span>
+</div>

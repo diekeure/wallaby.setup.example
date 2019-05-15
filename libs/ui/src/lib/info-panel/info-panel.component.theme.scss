@@ -1,0 +1,48 @@
+@mixin ui_info-panel_theme() {
+  $ui-info-panel-margin: 0 0 15px 0px !default;
+  $ui-info-panel-padding: 0 !default;
+  $ui-info-panel-bg-color: $ui-tertiary-bg-color !default;
+  $ui-info-panel-color: $ui-tertiary-font-color !default;
+  $ui-info-panel-title-color: $ui-tertiary-font-color-2 !default;
+  $ui-info-panel-title-padding: 15px !default;
+  $ui-info-panel-title-margin: 0 !default;
+  $ui-info-panel-title-text-transform: uppercase !default;
+  $ui-info-panel-title-font-size: 15px !default;
+  $ui-info-panel-title-font-weight: bold !default;
+  $ui-info-panel-title-font-family: $primary-font-family-2 !default;
+  $ui-info-panel-title-bg-color: $ui-tertiary-bg-color-2 !default;
+  $ui-info-panel-title-icon-margin: 0 9px 0 0 !default;
+  $ui-info-panel-body-padding: 15px !default;
+  $ui-info-panel-body-margin: 0 !default;
+
+  .info-panel {
+    background-color: $ui-info-panel-bg-color;
+    margin: $ui-info-panel-margin;
+    padding: $ui-info-panel-padding;
+    color: $ui-info-panel-color;
+    &__title {
+      background-color: $ui-info-panel-title-bg-color;
+      font-family: $ui-info-panel-title-font-family;
+      font-weight: $ui-info-panel-title-font-weight;
+      font-size: $ui-info-panel-title-font-size;
+      text-transform: $ui-info-panel-title-text-transform;
+      color: $ui-info-panel-title-color;
+      padding: $ui-info-panel-title-padding;
+      margin: $ui-info-panel-title-margin;
+      &__left {
+        &__icon {
+          margin: $ui-info-panel-title-icon-margin;
+        }
+      }
+      &__right {
+        &__icon {
+          margin: $ui-info-panel-title-icon-margin;
+        }
+      }
+    }
+    &__body {
+      padding: $ui-info-panel-body-padding;
+      margin: $ui-info-panel-body-margin;
+    }
+  }
+}

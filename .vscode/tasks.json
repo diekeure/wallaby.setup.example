@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "wallaby-setup",
+      "type": "shell",
+      "command": "node",
+      "args": [".vscode/wallaby/wallaby-setup", "${input:wallabyProject}"],
+      "problemMatcher": []
+    },
+    {
+      "label": "wallaby-single-file-setup",
+      "type": "shell",
+      "command": "node",
+      "args": [
+        ".vscode/wallaby/wallaby-setup",
+        "${input:wallabyProject}",
+        "${input:wallabyFileName}"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "wallabyProject",
+      "description": "Project choises to run wallaby with",
+      "type": "pickString",
+      "options": [
+        "polpo-classroom-web",
+        "dal",
+        "browser",
+        "guards",
+        "scorm",
+        "search",
+        "shared",
+        "testing",
+        "ui",
+        "utils",
+        "pages-books",
+        "pages-bundles",
+        "pages-edu-contents",
+        "pages-error",
+        "pages-logout",
+        "pages-messages",
+        "pages-reports",
+        "pages-shared",
+        "pages-tasks",
+        "pages-settings-alerts",
+        "pages-settings-coupled-teachers",
+        "pages-settings-credentials",
+        "pages-settings-dashboard",
+        "pages-settings-profile"
+      ],
+      "default": "polpo-classroom-web"
+    },
+    {
+      "id": "wallabyFileName",
+      "description": "Name of the *.spec.ts file without the '.spec.ts'",
+      "type": "promptString"
+    }
+  ]
+}

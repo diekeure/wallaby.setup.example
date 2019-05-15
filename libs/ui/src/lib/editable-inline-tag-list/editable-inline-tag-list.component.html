@@ -1,0 +1,31 @@
+<div class="ui_editable-inline-tag-list">
+  <h3 *ngIf="titleText" class="ui_editable-inline-tag-list__title">{{
+    titleText
+  }}</h3>
+  <div class="ui_editable-inline-tag-list__items">
+    <div
+      class="ui_editable-inline-tag-list__items__item"
+      *ngFor="let item of items"
+    >
+      <div class="ui_editable-inline-tag-list__items__item__text"
+        >{{ item.text }}
+        <div
+          *ngIf="item.count"
+          class="ui_editable-inline-tag-list__items__item__text__count"
+          >({{ item.count }})</div
+        >
+      </div>
+      <div
+        *ngIf="item.editable"
+        class="ui_editable-inline-tag-list__items__item__icon polpo-presentatie"
+        (click)="onItemRemoveClick(item)"
+      ></div>
+    </div>
+  </div>
+  <div *ngIf="editable" class="ui_editable-inline-tag-list__icons">
+    <div
+      class="ui_editable-inline-tag-list__icons__icon polpo-presentatie"
+      (click)="onEditClicked()"
+    ></div>
+  </div>
+</div>

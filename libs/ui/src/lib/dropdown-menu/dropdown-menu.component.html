@@ -1,0 +1,25 @@
+<div
+  [matMenuTriggerFor]="toolBarItemDropdown"
+  class="ui-dropdown-menu__trigger"
+></div>
+<mat-menu
+  #toolBarItemDropdown="matMenu"
+  class="ui-dropdown-menu  {{smallWidth ? 'ui-dropdown-menu--small' : 'ui-dropdown-menu--large' }}"
+  [overlapTrigger]="false"
+  [yPosition]="'below'"
+>
+  <div *ngIf="showHeader" class="ui-dropdown-menu__header">
+    <h3>
+      <mat-icon
+        *ngIf="headerIcon"
+        class="icon"
+        [svgIcon]="headerIcon"
+      ></mat-icon>
+      <strong>{{ newItemCount }} nieuwe</strong> {{ itemType }}
+    </h3>
+    <span *ngIf="linkText && linkUrl">
+      <a [routerLink]="linkUrl">{{ linkText }}</a></span
+    >
+  </div>
+  <div class="ui-dropdown-menu__body"> <ng-content></ng-content> </div>
+</mat-menu>

@@ -1,0 +1,122 @@
+@import '../../lib/breakpoints.scss';
+
+:host {
+  display: flex;
+}
+
+:host[dropdown] {
+  margin: 5px 0px;
+}
+
+[mat-menu-item] {
+  display: flex;
+  white-space: normal;
+  line-height: unset;
+  height: unset;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+}
+
+.ui-notification {
+  &__body {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    align-items: center;
+  }
+
+  &__badge {
+    margin-right: 10px;
+  }
+
+  &__end {
+    display: flex;
+    flex-direction: row;
+    flex: 0 1 auto;
+    align-self: stretch;
+  }
+
+  &__icon {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    margin-right: 10px;
+    flex: 0 0 auto;
+  }
+
+  &__date {
+    font-size: 80%;
+    margin: 5px 0 5px 5px;
+    padding: 5px;
+    white-space: nowrap;
+    align-self: center;
+    border-radius: 10px;
+  }
+
+  &__title {
+    margin: 5px;
+    align-self: center;
+    flex: 0 0 auto;
+  }
+
+  &__buttons {
+    align-self: center;
+    display: flex;
+  }
+}
+
+@media #{$ui-breakpoint-xsmall} {
+  .ui-notification {
+    &__body {
+      flex-direction: column;
+    }
+
+    &__title,
+    &__text {
+      align-self: flex-start;
+      margin: auto 0;
+    }
+
+    &__end {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__date {
+      align-self: flex-end;
+    }
+
+    &__buttons {
+      align-self: flex-end;
+      justify-content: flex-end;
+    }
+  }
+}
+
+:host.ui-notification--dropdown {
+  .ui-notification {
+    &__body {
+      flex-direction: column;
+    }
+
+    &__icon {
+      width: 34px;
+      height: 34px;
+    }
+
+    &__icon,
+    &__date,
+    &__title,
+    &__text {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      align-self: flex-start;
+    }
+
+    &__buttons {
+      display: none;
+    }
+  }
+}

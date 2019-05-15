@@ -1,0 +1,29 @@
+@mixin ui_banner_theme() {
+  $ui-banner-background-color: $ui-tertiary-bg-color !default;
+  $ui-banner-padding: 10px !default; // same as page-bar-padding
+  $ui-banner-min-height: 55px !default; // same as page-bar-height
+
+  $ui-banner-icon-right-margin: 10px !default;
+  $ui-banner-text-color: $ui-primary-font-color !default;
+
+  $ui-banner-icon-size: $ui-icon-size-medium !default;
+
+  .ui-banner {
+    background-color: $ui-banner-background-color;
+    padding: $ui-banner-padding;
+    color: $ui-banner-text-color;
+    min-height: $ui-banner-min-height;
+
+    &__content {
+      mat-icon {
+        width: $ui-banner-icon-size;
+        height: $ui-banner-icon-size;
+      }
+
+      &__icon {
+        color: $ui-banner-text-color;
+        margin-right: $ui-banner-icon-right-margin;
+      }
+    }
+  }
+}

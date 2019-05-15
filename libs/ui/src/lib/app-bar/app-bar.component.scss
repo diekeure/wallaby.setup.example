@@ -1,0 +1,38 @@
+.ui-app-bar {
+  padding: 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  &__section {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 70%;
+
+    &--align-start {
+      padding-left: 12px;
+      padding-right: 0;
+      justify-content: flex-start;
+      order: -1;
+      flex: 2 1 auto;
+    }
+
+    &--align-center {
+      flex-grow: 1;
+      padding-left: 0;
+      padding-right: 0;
+      justify-content: center;
+      order: 0;
+    }
+
+    &--align-end {
+      padding-left: 0;
+      padding-right: 12px;
+      justify-content: flex-end;
+      order: 1;
+      flex: 0 0 auto;
+    }
+  }
+}

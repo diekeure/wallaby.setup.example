@@ -1,0 +1,9 @@
+@mixin ui-app-bar {
+  $ui-app-bar-height: 45px !default;
+  $ui-app-bar-background-color: $ui-secondary-bg-color !default;
+
+  .ui-app-bar {
+    background-color: $ui-app-bar-background-color;
+    height: $ui-app-bar-height;
+  }
+}

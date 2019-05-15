@@ -1,0 +1,16 @@
+// based upon https://github.com/angular/material2/blob/master/src/cdk/layout/breakpoints.ts
+
+$ui-breakpoint-xsmall: '(max-width: 599.9px)';
+$ui-breakpoint-small: '(min-width: 600px) and (max-width: 959.9px)';
+$ui-breakpoint-medium: '(min-width: 960px) and (max-width: 1279.9px)';
+$ui-breakpoint-large: '(min-width: 1280px) and (max-width: 1919.9px)';
+$ui-breakpoint-xlarge: '(min-width: 1920px)';
+$ui-breakpoint-handset: '(max-width: 599.9px) and (orientation: portrait), (max-width: 959.9px) and (orientation: landscape)';
+$ui-breakpoint-tablet: '(min-width: 600px) and (max-width: 839.9px) and (orientation: portrait), (min-width: 960px) and (max-width: 1279.9px) and (orientation: landscape)';
+$ui-breakpoint-web: '(min-width: 840px) and (orientation: portrait), (min-width: 1280px) and (orientation: landscape)';
+$ui-breakpoint-handsetportrait: '(max-width: 599.9px) and (orientation: portrait)';
+$ui-breakpoint-tabletportrait: '(min-width: 600px) and (max-width: 839.9px) and (orientation: portrait)';
+$ui-breakpoint-webportrait: '(min-width: 840px) and (orientation: portrait)';
+$ui-breakpoint-handsetlandscape: '(max-width: 959.9px) and (orientation: landscape)';
+$ui-breakpoint-tabletlandscape: '(min-width: 960px) and (max-width: 1279.9px) and (orientation: landscape)';
+$ui-breakpoint-weblandscape: '(min-width: 1280px) and (orientation: landscape)';

@@ -1,0 +1,51 @@
+@mixin ui-person-summary {
+  $ui-person-summary-picture-width: 50px !default;
+  $ui-person-summary-picture-height: 50px !default;
+
+  $ui-person-summary-connection-type-icon-height: 25px !default;
+  $ui-person-summary-connection-type-icon-width: 25px !default;
+  $ui-person-summary-connection-type-icon-left-margin: 5px !default;
+
+  $ui-person-summary-person-text-left-margin: 10px !default;
+
+  $ui-person-summary-person-text-name-color: $ui-primary-font-color !default;
+  $ui-person-summary-person-text-name-font-size: 15px !default;
+  $ui-person-summary-person-text-name-font-family: $ui-primary-font-family-2 !default;
+
+  $ui-person-summary-person-text-data-color: $ui-primary-font-color-2 !default;
+  $ui-person-summary-person-text-data-font-family: $ui-primary-font-family-2 !default;
+  $ui-person-summary-person-text-data-font-size: 12px !default;
+
+  $ui-person-summary-button-left-margin: 10px !default;
+  $ui-person-summary-button-top-margin: 5px !default;
+
+  .ui-person-summary {
+    &__images {
+      &__picture {
+        border-radius: 50%;
+      }
+
+      &__connection-type-icon {
+        width: $ui-person-summary-connection-type-icon-width;
+        height: $ui-person-summary-connection-type-icon-height;
+        margin-left: $ui-person-summary-connection-type-icon-left-margin;
+      }
+    }
+
+    &__text {
+      margin-left: $ui-person-summary-person-text-left-margin;
+
+      &__person-name {
+        color: $ui-person-summary-person-text-name-color;
+        font-size: $ui-person-summary-person-text-name-font-size;
+        font-family: $ui-person-summary-person-text-name-font-family;
+      }
+
+      &__person-data {
+        color: $ui-person-summary-person-text-data-color;
+        font-size: $ui-person-summary-person-text-data-font-size;
+        font-family: $ui-person-summary-person-text-data-font-family;
+      }
+    }
+  }
+}

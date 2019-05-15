@@ -1,0 +1,91 @@
+@mixin ui-tile() {
+  $ui-tile-margins: 0 20px 20px 0 !default;
+  $ui-tile-size-width: $ui-tile-width !default;
+  $ui-tile-size-height: $ui-tile-height !default;
+  $ui-tile-background-color: $ui-primary-color-accent !default;
+  $ui-tile-background-image: '' !default;
+
+  $ui-tile-content-label-color: $ui-tertiary-font-color-2 !default;
+  $ui-tile-content-label-font-size: $ui-primary-font-size !default;
+  $ui-tile-content-label-weight: 700 !default;
+  $ui-tile-content-label-margin: 16px !default;
+
+  $ui-tile-content-icon-color: $ui-tertiary-font-color-2 !default;
+  $ui-tile-content-icon-size: $ui-icon-size-medium !default;
+  $ui-tile-content-icon-show-border: false !default;
+  $ui-tile-content-icon-border-padding: 8px !default;
+  $ui-tile-content-icon-border-width: 2px !default;
+  $ui-tile-content-icon-margin: $ui-button-padding-left;
+
+  $ui-tile-actions-height: 25px !default;
+  $ui-tile-actions-background-color: rgba(0, 0, 0, 0.2) !default;
+  $ui-tile-actions-padding: 4px !default;
+
+  $ui-tile-actions-label-color: $ui-tertiary-font-color-2 !default;
+  $ui-tile-actions-label-height: $ui-primary-font-size !default;
+  $ui-tile-actions-label-margin: 5px !default;
+  $ui-tile-actions-icon-color: $ui-tertiary-font-color-2 !default;
+  $ui-tile-actions-icon-size: $ui-icon-size-tiny !default;
+
+  .ui-tile {
+    margin: $ui-tile-margins;
+    width: $ui-tile-size-width;
+    min-height: $ui-tile-size-height;
+
+    @if ($ui-tile-background-image != '') {
+      background: transparent
+        url($ui-tile-background-image)
+        no-repeat
+        right
+        center;
+      background-size: contain;
+    }
+    background-color: $ui-tile-background-color;
+
+    &__content {
+      &__label {
+        font-size: $ui-tile-content-label-font-size;
+        font-weight: $ui-tile-content-label-weight;
+        margin-left: $ui-tile-content-label-margin;
+        margin-right: $ui-tile-content-label-margin;
+
+        color: $ui-tile-content-label-color;
+      }
+
+      mat-icon {
+        width: $ui-tile-content-icon-size + $ui-tile-content-icon-border-padding;
+        height: $ui-tile-content-icon-size +
+          $ui-tile-content-icon-border-padding;
+        margin-left: $ui-tile-content-icon-margin;
+        @if ($ui-tile-content-icon-show-border) {
+          border: solid
+            $ui-tile-content-icon-border-width
+            $ui-tile-content-icon-color;
+          border-radius: 50%;
+          padding: $ui-tile-content-icon-border-padding;
+        }
+        color: $ui-tile-content-icon-color;
+      }
+    }
+    &__actions {
+      height: $ui-tile-actions-height;
+      background-color: $ui-tile-actions-background-color;
+      &__action {
+        line-height: $ui-tile-actions-height;
+        padding-left: $ui-tile-actions-padding;
+        padding-right: $ui-tile-actions-padding;
+        &__label {
+          margin-left: $ui-tile-actions-label-margin;
+          height: $ui-tile-actions-label-height;
+          color: $ui-tile-actions-label-color;
+        }
+        &__icon,
+        mat-icon {
+          width: $ui-tile-actions-icon-size;
+          height: $ui-tile-actions-icon-size;
+          color: $ui-tile-actions-icon-color;
+        }
+      }
+    }
+  }
+}

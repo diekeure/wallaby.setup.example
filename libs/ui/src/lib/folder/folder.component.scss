@@ -1,0 +1,173 @@
+.ui-folder {
+  display: block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 16.4px;
+  box-sizing: content-box;
+
+  &__header {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &-icon {
+      .mat-progress-spinner {
+        position: absolute;
+        z-index: 2;
+      }
+
+      &-wrapper {
+        z-index: 1;
+        border-radius: 50%;
+        box-sizing: border-box;
+        margin: 1px;
+
+        mat-icon {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-weight: 300;
+    font-size: 12px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.2); // depends on type
+
+    span {
+      display: block;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    right: 0;
+    background-color: inherit;
+    min-width: 10px;
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-style: solid;
+      border-color: transparent;
+      border-right-color: inherit;
+    }
+
+    span {
+      line-height: 20px;
+      border-radius: 10px !important;
+      display: inline-block;
+      padding: 0 4px;
+      text-align: center;
+      min-width: 26px;
+      position: relative;
+      z-index: 3;
+      font-weight: 700;
+      font-size: 14px;
+
+      &::before,
+      &::after {
+        width: 20px;
+        height: 18px;
+        position: absolute;
+        content: ' ';
+        border-radius: 10px;
+        border-color: inherit;
+        border-left-color: transparent;
+        z-index: 2;
+        right: -3px;
+        top: 0;
+        opacity: 0.75;
+      }
+
+      &::after {
+        opacity: 0.5;
+        right: -6px;
+        z-index: 1;
+      }
+    }
+  }
+
+  &--grid {
+    .ui-folder {
+      &__mask-text {
+        bottom: 0px;
+        height: 20px;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        box-shadow: inset 0px -20px 10px -10px;
+      }
+    }
+  }
+
+  &--line {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    border-top-style: solid;
+    border-bottom-style: solid;
+
+    .ui-folder {
+      &__wrapper {
+        display: flex;
+        flex: 0 1 auto;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      &__header {
+        margin: 0px;
+        position: relative;
+        z-index: 2;
+      }
+
+      &__title {
+        flex: 1 2 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &__info {
+        padding: 0;
+        height: 100%;
+        background: none;
+        justify-content: center;
+        position: relative;
+        overflow: visible;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          top: 0;
+          border-style: solid;
+        }
+      }
+
+      &__badge {
+        position: relative;
+        top: 0;
+        right: 0;
+        justify-self: end;
+
+        &::before {
+          content: none;
+        }
+      }
+    }
+  }
+}

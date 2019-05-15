@@ -1,0 +1,75 @@
+.ui_person-badge {
+  display: flex;
+  flex: 1 1 auto;
+
+  &__badge,
+  img {
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+
+  &__display {
+    display: flex;
+    align-items: center;
+  }
+
+  &--right {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+
+    .ui_person-badge__display {
+      margin-right: 10px;
+
+      &__name,
+      &__subtext {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &--left {
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .ui_person-badge__display {
+      margin-left: 10px;
+
+      &__name,
+      &__subtext {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &--top {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+
+    .ui_person-badge__display {
+      &__name,
+      &__subtext {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &--bottom {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .ui_person-badge__display {
+      &__name,
+      &__subtext {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -1,0 +1,220 @@
+@mixin ui-button() {
+  $ui-button-padding: $ui-button-font-size/2 !default;
+  $ui-button-color: $ui-button-font-color !default;
+  $ui-button-background-color: $ui-button-bg-color !default;
+  $ui-button__icon-margin: 0 $ui-button-font-size/2 0 0 !default;
+  $ui-button-border-color: darken($ui-button-background-color, 10%) !default;
+  $ui-button-background-color-1: $ui-button-bg-color-1 !default;
+  $ui-button-background-color-2: $ui-button-bg-color-2 !default;
+
+  // --disabled
+  $ui-button--disabled-background-color: lighten(
+    $ui-button-background-color,
+    20%
+  ) !default;
+  $ui-button--disabled-border-color: lighten(
+    $ui-button-border-color,
+    20%
+  ) !default;
+  // --hover
+  $ui-button--hover-background-color: $ui-button-color !default;
+  $ui-button--hover-color: $ui-button-background-color !default;
+  // --active
+  $ui-button--active-background-color: $ui-button-background-color-1 !default;
+  $ui-button--active-color: $ui-button-color !default;
+  // --rounded-corner
+  $ui-button--rounded-corner-border-radius: $ui-button-font-size / 4 !default;
+  // --large
+  $ui-button--large-font-size: $ui-button-font-size * 1.5 !default;
+  $ui-button--large-padding: $ui-button--large-font-size !default;
+  $ui-button--large-icon-size: $ui-button--large-font-size !default;
+  $ui-button--large-max-width: 400px !default;
+  $ui-button--large__icon-margin-right: $ui-button--large-font-size / 2 !default;
+  $ui-button--large-background-color: $ui-button-background-color-2 !default;
+  $ui-button--large-font-color: $ui-primary-font-color-2 !default;
+  $ui-button--large-border-color: $ui-button--large-font-color !default;
+  // --danger
+  $ui-button--danger-color: $ui-button-color !default;
+  $ui-button--danger-background-color: $ui-danger-bg-color !default;
+  $ui-button--danger-border-color: darken(
+    $ui-button--danger-background-color,
+    10%
+  ) !default;
+  // --danger--disabled
+  $ui-button--danger--disabled-background-color: lighten(
+    $ui-button--danger-background-color,
+    20%
+  ) !default;
+  $ui-button--danger--disabled-border-color: lighten(
+    $ui-button--danger-border-color,
+    20%
+  ) !default;
+  // --danger--hover
+  $ui-button--danger--hover-color: $ui-button--danger-background-color !default;
+  $ui-button--danger--hover-background-color: $ui-button--danger-color !default;
+  // --danger--active
+  $ui-button--danger--active-color: $ui-button--danger-background-color !default;
+  $ui-button--danger--active-background-color: $ui-button--danger-color !default;
+  // --warning
+  $ui-button--warning-color: $ui-button-color !default;
+  $ui-button--warning-background-color: $ui-warning-bg-color !default;
+  $ui-button--warning-border-color: darken(
+    $ui-button--warning-background-color,
+    10%
+  ) !default;
+  // --warning--disabled
+  $ui-button--warning--disabled-background-color: lighten(
+    $ui-button--warning-background-color,
+    20%
+  ) !default;
+  $ui-button--warning--disabled-border-color: lighten(
+    $ui-button--warning-border-color,
+    20%
+  ) !default;
+  // --warning--hover
+  $ui-button--warning--hover-color: $ui-button--warning-background-color !default;
+  $ui-button--warning--hover-background-color: $ui-button--warning-color !default;
+  // --warning--active
+  $ui-button--warning--active-color: $ui-button--warning-background-color !default;
+  $ui-button--warning--active-background-color: $ui-button--warning-color !default;
+  // --primary
+  $ui-button--primary-background-color: $ui-button-background-color-1 !default;
+  $ui-button--primary-border-color: darken(
+    $ui-button--primary-background-color,
+    10%
+  ) !default;
+  // --primary--disabled
+  $ui-button--primary--disabled-border-color: darken(
+    $ui-button-background-color,
+    10%
+  ) !default;
+  .ui-button {
+    font-size: $ui-button-font-size;
+    padding: $ui-button-padding;
+    color: $ui-form-item-font-color;
+    background-color: $ui-button-background-color;
+    margin-right: $ui-form-spacing;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:active,
+    &.ui-button--active {
+      background-color: $ui-button--active-background-color;
+      color: $ui-button--active-color;
+    }
+    &:hover {
+      background-color: darken($ui-button-background-color, 5%);
+    }
+    &.ui-button--active:hover {
+      background-color: darken($ui-button--active-background-color, 5%);
+    } // --bordered
+    &.ui-button--bordered {
+      border-color: $ui-button-border-color;
+      border-style: solid;
+      border-width: 1px; // --bordered--disabled
+      &.ui-button--disabled {
+        .ui-button {
+          border-color: $ui-button--disabled-border-color;
+        }
+      }
+    } // --rounded-corners
+    &.ui-button--rounded-corners {
+      border-radius: $ui-button--rounded-corner-border-radius;
+    }
+    // --disabled
+    &.ui-button--disabled {
+      background-color: $ui-button--disabled-background-color;
+      &::before {
+        opacity: 0.5;
+      }
+    }
+    // --large
+    &.ui-button--large {
+      width: 100%;
+      max-width: $ui-button--large-max-width;
+      padding: $ui-button--large-padding;
+      font-size: $ui-button--large-font-size;
+      background-color: $ui-button--large-background-color;
+      &:hover,
+      &:active {
+        color: $ui-button-color;
+        background-color: $ui-button--primary-background-color;
+      }
+      mat-icon {
+        height: $ui-button--large-icon-size;
+        width: $ui-button--large-icon-size;
+        margin-right: $ui-button--large__icon-margin-right;
+      }
+    }
+    // --danger
+    &.ui-button--danger {
+      background-color: $ui-button--danger-background-color;
+      &:active,
+      &.ui-button--active {
+        background-color: $ui-button--danger--active-background-color;
+        color: $ui-button--danger--active-color;
+      }
+      &:hover {
+        background-color: $ui-button--danger--hover-background-color;
+        color: $ui-button--danger--hover-color;
+      }
+      &.ui-button--disabled {
+        background-color: $ui-button--danger--disabled-background-color;
+      }
+      // --danger--bordered
+      &.ui-button--bordered {
+        border-color: $ui-button--danger-border-color; // --danger--bordered--disabled
+        &.ui-button--disabled {
+          border-color: $ui-button--danger--disabled-border-color;
+        }
+      }
+    }
+    // --warning
+    &.ui-button--warning {
+      background-color: $ui-button--warning-background-color;
+      &:active,
+      &.ui-button--active {
+        background-color: $ui-button--warning--active-background-color;
+        color: $ui-button--warning--active-color;
+      }
+      &:hover {
+        background-color: $ui-button--warning--hover-background-color;
+        color: $ui-button--warning--hover-color;
+      }
+      // --warning--disabled
+      &.ui-button--disabled {
+        background-color: $ui-button--warning--disabled-background-color;
+      }
+      // --warning--bordered
+      &.ui-button--bordered {
+        border-color: $ui-button--warning-border-color; // --warning--bordered--disabled
+        &.ui-button--disabled {
+          border-color: $ui-button--warning--disabled-border-color;
+        }
+      }
+    }
+    // --primary
+    &.ui-button--primary {
+      color: $ui-button-color;
+      background-color: $ui-button--primary-background-color;
+      &:hover,
+      &:active,
+      &.ui-button--active {
+        background-color: darken($ui-button--primary-background-color, 5%);
+      }
+      // --primary--disabled
+      &.ui-button--disabled {
+        background-color: lighten($ui-button--primary-background-color, 30%);
+        color: $ui-button-color;
+      }
+      // --primary--bordered
+      &.ui-button--bordered {
+        border-color: $ui-button--primary-border-color;
+        // --primary--bordered--disabled
+        &.ui-button--disabled {
+          border-color: $ui-button--primary--disabled-border-color;
+        }
+      }
+    }
+  }
+}

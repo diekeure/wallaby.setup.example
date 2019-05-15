@@ -1,0 +1,38 @@
+sudo: false
+language: node_js
+node_js:
+  - 10.3
+cache:
+  npm: true
+  directories:
+    - '~/.cache'
+  override:
+    - npm ci
+addons:
+  hosts:
+    - teacher.polpo.localhost
+    - student.polpo.localhost
+branches:
+  only:
+    - develop
+    - deploy/staging-polpo-classroom-web
+before_install:
+  - npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+before_script:
+  - npm run lint
+  - npm run format:check
+  - npm run test
+  - npm run e2e:ci
+script:
+  - if [ $TRAVIS_BRANCH == "deploy/staging-polpo-classroom-web" ]  && [ $TRAVIS_PULL_REQUEST == "false" ] ; then ng build -c staging ; fi
+deploy:
+  - provider: s3
+    bucket: site.student-staging-polpo-be
+    access_key_id: AKIAJGQLNGBYXV4THJLQ
+    secret_access_key:
+      secure: nsbT1i6XCkVKJzGMvqTYhSK7GWgn8PU75+A2gqYX4FZb+5tlso0QACtN2cnTFiiaSbJ3Y0V6/RLqRfPzoM9uNrq0PxRhGP2qL3H5ntod1U5KcmYrIiYcnltQejl4pq19AKEqUam9LGimuljCi5TuaW6FBnMkan0FxgNunhNtsZ6Pw6mIX5GeQlQG1fT2n/eqQOOp92q8DYIkb2X0xuZZZHrLUyjKiSSSL04sjkt+WjVOOfuCZg9HWNdX9hjoUDlR3Yux8Dm/cDQZUAEBSN1t2PYp8+iYtnqbZEuJPeqLASpB5MpoVpo0/ESJHP/i+Zt6nu8NWaVxrx5oRml4x0C0ncvhCPBJkHhx/2K/Kd0BwSpiY9lsnaAn8fNtHrz8izuhWIF7LByqCYXgQWqlss9lqntUnw2xG7ccbNCimZbQeoQ+Bo5oqaEc1geO73htc8zLgijnW7DCq/QTIckZtuDs4CVKRbvAXRAuS3VEi0ycA5cSLFfsmPkA7epX8gMIOtHfoBIP89AGHMOb30FadQs4UWwEoWq1X84W6FR9eh2YBh0anMDA9XTp9ozebsJZGYrUbyGmNLi6MwOzMLCnntk5iGXLguvmZ7aHTYDQePisFujoZ65MQEoyoMbY9H2Q4/60THxt7UUZ7GKiOUuFBddzUvb0JuKjFlyFTlhCqM4zWug=
+    skip_cleanup: true
+    region: eu-west-1
+    local_dir: dist/apps/polpo-classroom-web
+    on:
+      branch: deploy/staging-polpo-classroom-web

@@ -1,0 +1,21 @@
+.ui-person-summary {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  &__images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 auto;
+  }
+
+  &__text {
+    flex: 1 1 auto;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

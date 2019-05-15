@@ -1,0 +1,14 @@
+<div class="ui_person-badge ui_person-badge--{{align}}">
+  <div
+    class="ui_person-badge__badge ui_person-badge__badge--{{size}}"
+    [class.ui_person-badge__badge--show-border]="showBorder"
+    >{{ person | personInitials }}
+    <img *ngIf="person.avatar" [src]="person.avatar" alt="avatar" />
+  </div>
+  <div class="ui_person-badge__display" *ngIf="showText">
+    <div class="ui_person-badge__display__name">{{ person.displayName }}</div>
+    <div class="ui_person-badge__display__subtext" *ngIf="subText">{{
+      subText
+    }}</div>
+  </div>
+</div>

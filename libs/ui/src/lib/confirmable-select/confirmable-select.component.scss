@@ -1,0 +1,39 @@
+.ui-confirmable-select {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 10px;
+    font-family: Oswald, Sans-Serif;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  &__text {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: Arial, Sans-Serif;
+    word-break: break-word;
+  }
+  &__dropdown {
+    &__form-field {
+      width: 100%;
+    }
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px 5px 0 10px;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      min-height: 30px;
+      border-radius: 50%;
+    }
+  }
+}

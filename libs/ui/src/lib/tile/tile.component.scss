@@ -1,0 +1,41 @@
+.ui-tile {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+
+    &__label {
+      overflow: hidden;
+    }
+
+    mat-icon {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    width: 100%;
+
+    &__action {
+      cursor: pointer;
+      flex-grow: 1;
+
+      &__label {
+        text-decoration: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

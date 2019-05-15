@@ -1,0 +1,19 @@
+.ui-drop-area {
+  background-size: contain;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  &--justify-content-left {
+    justify-content: left;
+  }
+  &__icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__label {
+    overflow: hidden;
+  }
+}

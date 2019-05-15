@@ -1,0 +1,38 @@
+.ui_period-label {
+  padding: 15px 20px 15px 20px;
+  &__title {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 0 5px 0;
+    line-height: normal;
+  }
+  &__date-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3px 11px 0 5px;
+    &__text {
+      display: flex;
+      flex-direction: row;
+      &__label {
+        width: 40px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      &__value {
+        padding-left: 5px;
+        font-size: 14px;
+      }
+    }
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+  }
+}

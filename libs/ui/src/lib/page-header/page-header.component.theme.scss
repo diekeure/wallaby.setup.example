@@ -1,0 +1,43 @@
+@mixin ui-page-header_theme() {
+  // color palette
+  $ui-page-header-color: $ui-primary-font-color !default;
+  $ui-page-header-subcolor: $ui-primary-font-color-2 !default;
+  $ui-page-header-centered-subtitle-font-color: $ui-tertiary-font-color-2 !default;
+  $ui-page-header_centered-subtitle-bg-color: $ui-page-header_section-subtitle-bg-color !default;
+
+  $ui-page-header-font-size: ($ui-primary-font-size + 2) * 1.2 !default;
+  $ui-page-header-font-size--small: $ui-primary-font-size + 2 !default;
+  $ui-page-header-font-size--centered: ($ui-primary-font-size + 2) * 2 !default;
+
+  .ui-page-header {
+    color: $ui-page-header-color;
+    font-size: $ui-page-header-font-size;
+
+    // only used in default header
+    small {
+      color: $ui-page-header-subcolor;
+      font-size: $ui-page-header-font-size--small;
+    }
+
+    &--default {
+      .mat-icon {
+        height: $ui-icon-size-small;
+        width: $ui-icon-size-small;
+      }
+    }
+
+    &--centered {
+      font-size: $ui-page-header-font-size--centered;
+
+      .mat-icon {
+        height: $ui-icon-size-medium;
+        width: $ui-icon-size-medium;
+      }
+    }
+  }
+
+  .ui-page-header-centered-subtitle {
+    color: $ui-page-header-centered-subtitle-font-color;
+    background-color: $ui-page-header-centered-subtitle-bg-color;
+  }
+}

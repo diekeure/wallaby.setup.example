@@ -1,0 +1,25 @@
+:host {
+  display: inline-flex;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+:host.ui-button--circle {
+  border-radius: 50%;
+}
+
+:host.ui-button--disabled {
+  pointer-events: visible;
+  cursor: not-allowed;
+}
+
+:host.ui-button--large {
+  justify-content: left;
+
+  mat-icon {
+    flex: 0 0 auto;
+  }
+}

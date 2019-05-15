@@ -1,0 +1,42 @@
+@mixin ui-app-shell() {
+  $ui-shell__left-width: 200px !default;
+  $ui-shell__left-background-color: $ui-secondary-bg-color !default;
+
+  $ui-shell__top-height: 50px !default;
+  $ui-shell__top-height--mobile: 50px !default;
+  $ui-shell__top-line-height: $ui-shell__top-height !default;
+  $ui-shell__top-background-color: $ui-secondary-bg-color !default;
+  $ui-shell__top-font-color: $ui-secondary-font-color;
+
+  $ui-shell__logo-height: 50px !default;
+  $ui-shell__logo-background-color: $ui-secondary-bg-color !default;
+
+  $ui-shell__body-background-color: $ui-primary-bg-color !default;
+
+  .ui-shell__left {
+    width: $ui-shell__left-width;
+    background-color: $ui-shell__left-background-color;
+  }
+
+  .ui-shell__logo {
+    height: $ui-shell__logo-height;
+    background-color: $ui-shell__logo-background-color;
+  }
+
+  .ui-shell__top {
+    min-height: $ui-shell__top-height;
+    background-color: $ui-shell__top-background-color;
+    color: $ui-shell__top-font-color;
+  }
+
+  .ui-shell__body {
+    background-color: $ui-shell__body-background-color;
+  }
+
+  .ui--mobile {
+    .ui-shell__top {
+      height: $ui-shell__top-height--mobile;
+      min-height: unset;
+    }
+  }
+}

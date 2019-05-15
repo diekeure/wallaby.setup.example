@@ -1,0 +1,61 @@
+<div
+  class="ui-folder ui-folder--{{listFormat}}"
+  [ngStyle]="{
+    'border-top-color': backgroundColor | adjustColorBrightness: -20,
+    'border-bottom-color': backgroundColor,
+    'background-color': backgroundColor
+  }"
+>
+  <div class="ui-folder__wrapper">
+    <div class="ui-folder__header">
+      <div class="ui-folder__header-icon">
+        <mat-progress-spinner
+          mode="determinate"
+          [value]="progress"
+          strokeWidth="3"
+          [color]="progressTheme"
+          [diameter]="progressDiameter"
+          *ngIf="progress !== undefined"
+        >
+        </mat-progress-spinner>
+        <div class="ui-folder__header-icon-wrapper" *ngIf="icon">
+          <mat-icon [svgIcon]="icon"></mat-icon>
+        </div>
+      </div>
+      <div
+        *ngIf="listFormat === listFormatEnum.GRID"
+        class="ui-folder__title"
+        >{{ title }}</div
+      >
+      <div
+        class="ui-folder__mask-text"
+        [ngStyle]="{ color: backgroundColor }"
+      ></div>
+    </div>
+    <div
+      class="ui-folder__info"
+      [ngStyle]="{ 'border-color': backgroundColor }"
+    >
+      <div> <ng-content select="campus-folder-details"></ng-content> </div>
+    </div>
+  </div>
+  <div class="ui-folder__title" *ngIf="listFormat === listFormatEnum.LINE">{{
+    title
+  }}</div>
+
+  <div class="ui-folder__badge" [ngStyle]="{ 'border-color': backgroundColor }">
+    <span
+      *ngIf="!showEmptyError; else: emptyErrorBlock"
+      class="ui-folder__badge-number"
+      >{{ itemCount }}</span
+    >
+    <ng-template #emptyErrorBlock>
+      <span
+        class="ui-folder__badge-number ui-folder__badge-number--error"
+        matTooltip="Er is nog geen inhoud voor dit item"
+        tooltip-append-to-body="true"
+        >!</span
+      >
+    </ng-template>
+  </div>
+</div>

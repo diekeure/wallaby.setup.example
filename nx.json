@@ -1,0 +1,24 @@
+{
+  "npmScope": "campus",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "ui": {
+      "tags": []
+    },
+    "browser": {
+      "tags": []
+    },
+    "testing": {
+      "tags": []
+    },
+    "utils": {
+      "tags": []
+    }
+  }
+}

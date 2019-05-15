@@ -1,0 +1,14 @@
+<ng-container
+  *ngIf="items.length; then: hasContentTemplate; else: emptyTemplate"
+>
+</ng-container>
+
+<ng-template #hasContentTemplate>
+  <div class="ui-list-view__list ui-list-view__list--{{listFormat}}">
+    <ng-content></ng-content>
+  </div>
+</ng-template>
+
+<ng-template #emptyTemplate>
+  <p *ngIf="placeHolderText"> {{ placeHolderText }} </p>
+</ng-template>

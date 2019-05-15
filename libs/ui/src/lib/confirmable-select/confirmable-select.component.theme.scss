@@ -1,0 +1,7 @@
+@mixin ui-confirmable-select_theme() {
+  $ui-confirmable-select-margin: 20px 0 !default;
+
+  .ui-confirmable-select {
+    margin: $ui-confirmable-select-margin;
+  }
+}

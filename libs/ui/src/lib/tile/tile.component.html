@@ -1,0 +1,26 @@
+<div class="ui-tile" [style.background-color]="color">
+  <div class="ui-tile__content">
+    <mat-icon
+      class="ui-tile__content__icon"
+      *ngIf="icon"
+      [svgIcon]="icon"
+    ></mat-icon>
+    <div class="ui-tile__content__label">{{ label }}</div>
+  </div>
+
+  <div class="ui-tile__actions" *ngIf="secondaryActions">
+    <div
+      clickStopPropagation
+      *ngFor="let action of secondaryActions"
+      class="ui-tile__actions__action"
+      (click)="onActionClick($event, action)"
+    >
+      <mat-icon
+        class="ui-tile__actions__action__icon"
+        *ngIf="action.icon"
+        [svgIcon]="action.icon"
+      ></mat-icon>
+      <span class="ui-tile__actions__action__label">{{ action.label }}</span>
+    </div>
+  </div>
+</div>

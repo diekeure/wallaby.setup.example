@@ -1,0 +1,22 @@
+<mat-drawer-container is-mobile>
+  <mat-drawer #sidebar [opened]="!(inXSmall$ | async)" position="start">
+    <div class="ui-shell__left">
+      <div class="ui-shell__logo">
+        <ng-content select="[campusShellLogo],campus-shell-logo"></ng-content>
+      </div>
+      <div class="ui-shell__left__content ui-shell__filler">
+        <ng-content select="[campusShellLeft],campus-shell-left"></ng-content>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="ui-shell__right">
+      <div class="ui-shell__top">
+        <ng-content select="[campusShellTop],campus-shell-top"></ng-content>
+      </div>
+      <div class="ui-shell__body ui-shell__filler">
+        <ng-content select="[campusShellBody],campus-shell-body"></ng-content>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

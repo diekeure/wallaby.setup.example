@@ -1,0 +1,29 @@
+:host.ui-banner--mobile {
+  .ui-banner {
+    flex-flow: column nowrap;
+  }
+}
+
+.ui-banner {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-content: center;
+
+  &__content {
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    &__icon {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row-reverse nowrap;
+  }
+}

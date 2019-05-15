@@ -1,0 +1,53 @@
+:host ::ng-deep .ui_content-preview {
+  &__preview {
+    height: 205px;
+    overflow: hidden;
+    &__img {
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+    }
+  }
+  &__product {
+    min-height: 107px;
+    [type] {
+      width: 84px;
+      height: 107px;
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 10px;
+    }
+    &__details {
+      &__title {
+        font-family: Oswald, Sans-Serif;
+        font-size: 17px;
+        line-height: 20px;
+        font-weight: 500;
+      }
+      [icon] {
+        font-size: 25px;
+        margin: 6px 5px 5px;
+      }
+      &__description {
+        margin-bottom: 10px;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: Arial, Sans-Serif;
+        word-break: break-word;
+      }
+    }
+  }
+  &__badges {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    [badge] {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      min-width: 50px;
+      max-height: 37px;
+    }
+  }
+}

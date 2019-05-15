@@ -1,0 +1,86 @@
+// Mixin 'ui-tree-nav__levels' handles layout for multi-level navigation tree
+// Called with globally overridable variable '$ui-tree-nav-levels'
+//
+// $levels: sass list with a list of optional css-properties specified for each level
+//    supported properties: 'border-top', 'padding', 'icon-size' (= icon font-size)
+// $i: automatically calculated level, starts at '1'
+//
+// @example
+// $ui-tree-nav-levels: (
+//   // first level
+//   (
+//     padding: 10px 15px,
+//     border-top: 1px solid $ui-tree-nav-color-separator,
+//     icon-size: 30px
+//   ),
+//   // second level (removes border-top and inherits icon-size from previous level)
+//   (
+//     padding: 6px 15px 6px 43px,
+//     border-top: none
+//   )
+// );
+// @example
+@mixin ui-tree-nav__levels($levels, $i: 1) {
+  @if $i <= length($levels) {
+    $level: nth($levels, $i);
+    .ui-tree-nav__node {
+      @if map-has-key($level, border-top) {
+        border-top: map-get($level, border-top);
+      }
+      @if map-has-key($level, padding) {
+        a {
+          padding: map-get($level, padding);
+        }
+      }
+      @if map-has-key($level, icon-size) {
+        a > mat-icon:first-child {
+          font-size: map-get($level, icon-size);
+        }
+      }
+      // next level
+      @include ui-tree-nav__levels($levels, $i + 1);
+    }
+  }
+}
+
+@mixin ui-tree-nav() {
+  // colors
+  $ui-tree-nav-color: $ui-secondary-font-color !default;
+  $ui-tree-nav-color-active: $ui-secondary-font-color-accent !default;
+  $ui-tree-nav-color-separator: darken($ui-tree-nav-color, 40%) !default;
+
+  .ui-tree-nav__node {
+    > a {
+      color: $ui-tree-nav-color;
+      border-left: 3px solid transparent;
+
+      // active / hover state
+      &:hover,
+      &.ui-tree-nav__node--active {
+        color: $ui-tree-nav-color-active;
+        border-left: 3px solid $ui-tree-nav-color-active;
+      }
+
+      > mat-icon:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  // styling of different tree levels
+  $ui-tree-nav-levels: (
+    (
+      padding: 10px 15px,
+      border-top: 1px solid $ui-tree-nav-color-separator,
+      icon-size: 30px
+    ),
+    (
+      padding: 6px 15px 6px 43px,
+      border-top: none
+    ),
+    (
+      padding: 6px 15px 6px 60px
+    )
+  ) !default;
+  @include ui-tree-nav__levels($ui-tree-nav-levels);
+}

@@ -1,0 +1,22 @@
+<div class="ui-confirmable-select">
+  <div *ngIf="label" class="ui-confirmable-select__label">{{ label }}</div>
+  <div *ngIf="text" class="ui-confirmable-select__text">{{ text }}</div>
+  <div class="ui-confirmable-select__dropdown">
+    <mat-form-field class="ui-confirmable-select__dropdown__form-field">
+      <mat-select
+        class="ui-confirmable-select__dropdown__select"
+        [formControl]="selectControl"
+      >
+        <mat-option *ngFor="let option of options" [value]="option.value">{{
+          option.viewValue
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <campus-button
+      *ngIf="selectControl.dirty"
+      class="ui-confirmable-select__dropdown__icon"
+      [iconClass]="confirmIcon"
+      (click)="onClickConfirm()"
+    ></campus-button>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="ui-banner">
+  <div class="ui-banner__content">
+    <mat-icon
+      class="ui-banner__content__icon"
+      *ngIf="icon"
+      [svgIcon]="icon"
+    ></mat-icon>
+    <div class="ui-banner__content__text"> {{ message }} </div>
+  </div>
+  <div class="ui-banner__buttons">
+    <campus-button
+      *ngFor="let action of actions"
+      rounded-corners
+      bordered
+      (click)="onAction(action.userAction)"
+      >{{ action.title }}</campus-button
+    >
+  </div>
+</div>

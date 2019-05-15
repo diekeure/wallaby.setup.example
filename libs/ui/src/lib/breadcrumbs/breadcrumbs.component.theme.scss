@@ -1,0 +1,16 @@
+@mixin ui-breadcrumbs_theme() {
+  $ui-breadcrumbs-crumb-color: $ui-secondary-font-color !default;
+  $ui-breadcrumbs-crumb-text-size: 14px !default;
+
+  .ui-breadcrumbs {
+    &__holder {
+      &__breadcrumbs {
+        a,
+        span {
+          color: $ui-breadcrumbs-crumb-color;
+          font-size: $ui-breadcrumbs-crumb-text-size;
+        }
+      }
+    }
+  }
+}

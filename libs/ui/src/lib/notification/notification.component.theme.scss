@@ -1,0 +1,75 @@
+@mixin ui-notification() {
+  // color palette
+  $ui-notification_main-color: $ui-tertiary-font-color-2 !default;
+  $ui-notification_accent-color: $ui-tertiary-color-accent !default;
+  $ui-notification-font-color: $ui-tertiary-font-color !default;
+
+  // regular
+  $ui-notification_bg-color: unset;
+  $ui-notification_icon-color: $ui-notification_main-color;
+  $ui-notification_icon-bg-color: $ui-notification_accent-color;
+  $ui-notification_title-color: $ui-notification-font-color;
+  $ui-notification_date-color: $ui-notification_main-color;
+  $ui-notification_date-bg-color: $ui-notification_accent-color;
+  $ui-notification--unread_border-color: $ui-notification_accent-color;
+
+  // accented
+  $ui-notification--accented_bg-color: $ui-notification_main-color;
+  $ui-notification--accented_icon-color: $ui-notification_accent-color;
+  $ui-notification--accented_icon-bg-color: $ui-notification_main-color;
+  $ui-notification--accented_title-color: $ui-notification_accent-color;
+  $ui-notification--accented_date-color: $ui-notification_accent-color;
+  $ui-notification--accented_date-bg-color: $ui-notification_main-color;
+  $ui-notification--accented--unread_border-color: $ui-notification_accent-color;
+
+  .ui-notification {
+    border-left: solid 5px transparent;
+    color: $ui-notification-font-color;
+    background-color: $ui-notification_bg-color;
+
+    &--unread {
+      border-left: solid 5px $ui-notification--unread_border-color;
+    }
+
+    &__icon {
+      color: $ui-notification_icon-color !important;
+      background-color: $ui-notification_icon-bg-color;
+    }
+
+    &__date {
+      color: $ui-notification_date-color;
+      background-color: $ui-notification_date-bg-color;
+    }
+
+    &__title {
+      font-weight: bold;
+      color: $ui-notification_title-color;
+    }
+
+    //accented
+    &--accent {
+      background-color: $ui-notification--accented_bg-color;
+
+      .ui-notification__title {
+        color: $ui-notification--accented_title-color;
+      }
+
+      &.ui-notification--unread {
+        border-left: solid 5px $ui-notification--accented--unread_border-color;
+      }
+
+      & .ui-notification__text {
+        font-style: italic;
+
+        > span {
+          padding-left: 10px;
+          white-space: nowrap;
+
+          span {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

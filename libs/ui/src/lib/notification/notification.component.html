@@ -1,0 +1,33 @@
+<div mat-menu-item
+  ><mat-icon
+    [svgIcon]="icon"
+    *ngIf="icon"
+    class="ui-notification__icon"
+  ></mat-icon>
+  <campus-person-badge
+    *ngIf="person"
+    class="ui-notification__badge"
+    [person]="person"
+    align="left"
+    size="medium"
+    [showText]="false"
+  ></campus-person-badge>
+  <div class="ui-notification__body">
+    <div *ngIf="titleText" class="ui-notification__title">{{ titleText }}</div>
+    <div class="ui-notification__text"
+      >{{ notificationText
+      }}<span *ngIf="accented && link"
+        >&nbsp;&rarr; <span>Lees meer&hellip;</span></span
+      >
+    </div>
+  </div>
+  <div class="ui-notification__end">
+    <div *ngIf="notificationDate" class="ui-notification__date">{{
+      notificationDate | humanDateTime
+    }}</div>
+
+    <div class="ui-notification__buttons">
+      <ng-content select="campus-button mat-icon"></ng-content>
+    </div>
+  </div>
+</div>

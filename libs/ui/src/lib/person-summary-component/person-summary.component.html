@@ -1,0 +1,24 @@
+<div class="ui-person-summary">
+  <div class="ui-person-summary__images">
+    <campus-person-badge
+      class="ui-person-summary__images__picture"
+      [person]="person"
+      [showText]="false"
+    ></campus-person-badge>
+    <mat-icon
+      class="ui-person-summary__images__connection-type-icon"
+      *ngIf="connectionTypeIcon"
+      [svgIcon]="connectionTypeIcon"
+    >
+    </mat-icon>
+  </div>
+  <div class="ui-person-summary__text">
+    <div class="ui-person-summary__text__person-name">{{ person.name }}</div>
+    <div class="ui-person-summary__text__person-data">
+      <ng-content select="[description]"></ng-content>
+    </div>
+  </div>
+  <div class="ui-person-summary_buttons">
+    <ng-content select="campus-button [campusRoundedCorners]"></ng-content>
+  </div>
+</div>

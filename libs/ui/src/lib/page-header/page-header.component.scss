@@ -1,0 +1,49 @@
+.ui-page-header {
+  font-family: 'Open Sans', Sans-Serif;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-bottom: 25px;
+  line-height: 1;
+
+  &--default {
+    justify-content: left;
+
+    .ui-page-header__icon-wrapper {
+      float: left;
+      margin-right: 5px;
+    }
+  }
+
+  &--centered {
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    display: flex;
+
+    .ui-page-header__icon-wrapper {
+      margin-right: 15px;
+    }
+  }
+
+  > div {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  small {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: normal; //compensate for vertical overflow
+  }
+}
+
+.ui-page-header-centered-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  margin: 0;
+  padding: 10px 0;
+}

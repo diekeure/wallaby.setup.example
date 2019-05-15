@@ -1,0 +1,31 @@
+<div class="ui-content-thumbnail ui-content-thumbnail--{{listFormat}}">
+  <div
+    class="ui-content-thumbnail__header {{listFormat == listFormatEnum.LINE ? 'ui-content-thumbnail__header--reverse' : ''}}"
+  >
+    <mat-icon
+      class="ui-content-thumbnail__icon"
+      [svgIcon]="contentTypeClass"
+      *ngIf="contentTypeClass"
+    ></mat-icon>
+
+    <div class="flex-filler"></div>
+    <campus-file-extension
+      [extensionClass]="fileExtensionClass"
+      [title]="fileTypeLabel"
+      [showIcon]="false"
+    ></campus-file-extension>
+  </div>
+  <figure class="ui-content-thumbnail__image">
+    <mat-icon [svgIcon]="imagePath" *ngIf="imagePath"></mat-icon>
+    <campus-file-extension
+      *ngIf="!imagePath"
+      [extensionClass]="fileExtensionClass"
+      [title]="fileTypeLabel"
+      [showTitle]="false"
+    ></campus-file-extension>
+  </figure>
+  <div class="ui-content-thumbnail__title">
+    <div>{{ title }}</div> <div *ngIf="learningArea">{{ learningArea }}</div>
+  </div>
+  <div class="ui-content-thumbnail__footer"> <ng-content></ng-content> </div>
+</div>

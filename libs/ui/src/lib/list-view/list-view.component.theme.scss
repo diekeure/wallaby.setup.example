@@ -1,0 +1,138 @@
+$ui-list-view-color: $ui-primary-font-color-2 !default;
+$ui-list-view-label-font-family: $ui-primary-font-family-3 !default;
+
+$ui-list-view_item-border-width: 4px !default;
+$ui-list-view_item-margin--list: 0 0 -1px 0 !default;
+$ui-list-view_item-margin--grid: 0px 20px 20px 0px !default;
+$ui-list-view_item-margin--grid--selected: -4px 16px 16px -4px;
+
+$ui-list-view-selected-item-border-color: $ui-primary-color-accent !default;
+
+$ui-list-view-selection-overlay-background-color: $ui-primary-color-accent !default;
+$ui-list-view-selection-overlay-border-color: $ui-tertiary-bg-color !default;
+$ui-list-view-selection-overlay-circle-fg-color: $ui-list-view-selection-overlay-border-color !default;
+$ui-list-view-selection-overlay-circle-bg-color: $ui-primary-color-accent !default;
+$ui-list-view-selection-overlay-circle--not-selected-opacity: 0.4 !default;
+$ui-list-view-selection-overlay-circle--selected-opacity: 1 !default;
+$ui-list-view-selection-overlay-circle--selected-content: 'X' !default;
+$ui-list-view-selection-overlay-circle-radius: 22px !default;
+
+@mixin ui-list-view() {
+  .ui-list-view__list {
+    &__item {
+      color: $ui-list-view-color;
+
+      &__selectoverlay {
+        background-color: $ui-list-view-selection-overlay-border-color;
+
+        &::before {
+          content: '';
+          color: $ui-list-view-selection-overlay-circle-fg-color;
+          background-color: $ui-list-view-selection-overlay-circle-bg-color;
+          font-family: $ui-list-view-label-font-family;
+        }
+      }
+    }
+  }
+}
+
+@mixin ui-list-view-deep() {
+  campus-list-view {
+    .ui-list-view__list {
+      .ui-list-view__list__item {
+        &__selectoverlay {
+          position: relative;
+          &::before {
+            content: '';
+            text-align: center;
+            display: block;
+            width: $ui-list-view-selection-overlay-circle-radius;
+            height: $ui-list-view-selection-overlay-circle-radius;
+            line-height: $ui-list-view-selection-overlay-circle-radius;
+            float: left;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 2;
+          }
+
+          &:not(.ui-list-view__list__item--selected)::before {
+            opacity: $ui-list-view-selection-overlay-circle--not-selected-opacity;
+          }
+          &.ui-list-view__list__item--selected::before {
+            content: $ui-list-view-selection-overlay-circle--selected-content;
+          }
+          &:hover::before {
+            opacity: $ui-list-view-selection-overlay-circle--selected-opacity;
+          }
+        }
+      }
+
+      &--line,
+      &--grid {
+        & .ui-list-view__list__item {
+          &.ui-list-view__list__item--notselectable {
+            cursor: default;
+          }
+        }
+      }
+
+      /*Line*/
+      &--line {
+        & .ui-list-view__list__item {
+          transition: padding-left 0.15s ease-out;
+          box-sizing: border-box;
+          cursor: pointer;
+          display: block;
+          margin: $ui-list-view_item-margin--list;
+
+          &--selected {
+            border: none;
+            transform: translate(-4px, -4px);
+            & > * {
+              box-shadow: 4px 4px 0px $ui-list-view-selected-item-border-color;
+            }
+          }
+
+          &__selectoverlay {
+            padding-left: 30px;
+            &::before {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              margin: auto;
+            }
+          }
+        }
+      }
+      /*Grid*/
+      &--grid {
+        & .ui-list-view__list__item {
+          margin: $ui-list-view_item-margin--grid;
+          position: relative;
+          box-sizing: border-box;
+          cursor: pointer;
+          display: block;
+          transition: transform 0.15s ease-out;
+
+          &--selected {
+            border: none;
+            box-shadow: 4px 4px 0px $ui-list-view-selected-item-border-color;
+            transform: scale(1.05);
+          }
+
+          &__selectoverlay {
+            background-color: $ui-list-view-selection-overlay-background-color;
+            border: none;
+            margin: $ui-list-view_item-margin--grid;
+
+            &::before {
+              margin-left: 3px;
+              margin-top: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

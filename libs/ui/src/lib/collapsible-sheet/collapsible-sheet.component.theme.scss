@@ -1,0 +1,20 @@
+@mixin ui-collapsible-sheet() {
+  $ui-collapsible-sheet-button-size: 24px !default;
+  $ui-collapsible-sheet-button-bg-color: $ui-tertiary-bg-color-2 !default;
+  $ui-collapsible-sheet-button-icon-color: $ui-tertiary-font-color-2 !default;
+  $ui-collapsible-sheet-border-color: $ui-collapsible-sheet-button-bg-color !default;
+
+  .collapsible-sheet {
+    &__aside {
+      border-right: solid 1px $ui-collapsible-sheet-border-color;
+    }
+    &__toggle-button {
+      width: $ui-collapsible-sheet-button-size;
+      height: $ui-collapsible-sheet-button-size;
+      margin-top: -$ui-collapsible-sheet-button-size/2;
+      margin-left: -$ui-collapsible-sheet-button-size/2;
+      color: $ui-collapsible-sheet-button-icon-color;
+      background-color: $ui-collapsible-sheet-button-bg-color;
+    }
+  }
+}

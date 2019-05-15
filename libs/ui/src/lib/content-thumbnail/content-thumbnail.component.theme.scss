@@ -1,0 +1,129 @@
+@mixin ui-content-thumbnail {
+  $ui-content-thumbnail-background-color: $ui-tertiary-bg-color !default;
+  $ui-content-thumbnail-border-width: 1px !default;
+  $ui-content-thumbnail-border-color: $ui-tertiary-bg-color-2 !default;
+
+  $ui-content-thumbnail_header-background-opacity: 0.4 !default;
+  $ui-content-thumbnail_header-background-color: rgba(
+    $ui-content-thumbnail-background-color,
+    $ui-content-thumbnail_header-background-opacity
+  ) !default;
+  $ui-content-thumbnail_header_icon-font-size: 20px !default;
+  $ui-content-thumbnail_header_icon-line-height: $ui-content-thumbnail_header_icon-font-size +
+    4 !default;
+  $ui-content-thumbnail_image-background-color: $ui-primary-bg-color !default;
+  $ui-content-thumbnail_title-text-color: $ui-primary-font-color-2 !default;
+  /* * Grid */
+  $ui-content-thumbnail--grid-height: 235px !default;
+  $ui-content-thumbnail--grid-width: 170px !default;
+  $ui-content-thumbnail_header--grid-height: $ui-content-thumbnail_header_icon-line-height !default;
+  $ui-content-thumbnail_header--grid-width: 100% !default;
+  $ui-content-thumbnail_header_icon--grid-text-color: $ui-content-thumbnail_title-text-color !default;
+  $ui-content-thumbnail_header_icon--grid-margin-left: 4px !default;
+  $ui-content-thumbnail_image--grid-height: 96px !default;
+  $ui-content-thumbnail_image--grid-width: 100% !default;
+  $ui-content-thumbnail_image--grid--padding: 6px !default;
+  $ui-content-thumbnail_title--grid-font-size: 12px !default;
+  $ui-content-thumbnail_title--grid-line-height: 16px !default;
+  $ui-content-thumbnail_title--grid-padding: 13px !default;
+  $ui-content-thumbnail_actions--grid-height: 46px !default;
+  $ui-content-thumbnail_actions--grid-background-color: $ui-content-thumbnail_image-background-color !default;
+  $ui-content-thumbnail_footer--grid-padding: 0 3px !default;
+  /* * Line */
+  $ui-content-thumbnail--line-height: 48px !default;
+  $ui-content-thumbnail--line-width: 100% !default;
+  $ui-content-thumbnail_header--line-width: 120px !default;
+  $ui-content-thumbnail_header--padding-left: 20px !default;
+  $ui-content-thumbnail_header_icon--line-text-color: $ui-content-thumbnail_title-text-color !default;
+  $ui-content-thumbnail_title--line-font-size: 16px !default;
+  $ui-content-thumbnail_title--line-line-height: 22px !default;
+  $ui-content-thumbnail_title--line-font-weight: 400 !default;
+  $ui-content-thumbnail_title--line-padding: (
+      $ui-content-thumbnail--line-height -
+        $ui-content-thumbnail_title--line-line-height
+    )/2;
+  $ui-content-thumbnail_footer--line-margin-right: 20px !default;
+  .ui-content-thumbnail {
+    border: $ui-content-thumbnail-border-width solid
+      $ui-content-thumbnail_border-color;
+    background-color: $ui-content-thumbnail_background-color;
+    &__header {
+      .ui-content-thumbnail__icon {
+        font-size: $ui-content-thumbnail_header_icon-font-size;
+        line-height: $ui-content-thumbnail_header_icon-line-height;
+      }
+    }
+    &__title {
+      color: $ui-content-thumbnail_title-text-color;
+    }
+    // Grid
+    &--grid {
+      background-color: $ui-content-thumbnail_actions--grid-background-color;
+      width: $ui-content-thumbnail--grid-width;
+      height: $ui-content-thumbnail--grid-height;
+      .ui-content-thumbnail__header {
+        background: $ui-content-thumbnail_header-background-color;
+        height: $ui-content-thumbnail_header--grid-height;
+        .ui-content-thumbnail__icon {
+          margin-left: $ui-content-thumbnail_header_icon--grid-margin-left;
+          color: $ui-content-thumbnail_header_icon--grid-text-color;
+        }
+      }
+      .ui-content-thumbnail__image {
+        background-color: $ui-content-thumbnail_image-background-color;
+        height: $ui-content-thumbnail_image--grid-height;
+        width: $ui-content-thumbnail_image--grid-width;
+        & > * {
+          padding: $ui-content-thumbnail_image--grid--padding;
+        }
+        & > campus-file-extension {
+          margin-top: -$ui-content-thumbnail_header--grid-height; // show underneath header
+        }
+        & > mat-icon {
+          height: $ui-content-thumbnail_image--grid-height;
+          background-color: $ui-content-thumbnail-background-color;
+        }
+      }
+      .ui-content-thumbnail__title {
+        font-size: $ui-content-thumbnail_title--grid-font-size;
+        line-height: $ui-content-thumbnail_title--grid-line-height;
+        padding: $ui-content-thumbnail_title--grid-padding;
+        background-color: $ui-content-thumbnail_background-color;
+      }
+      .ui-content-thumbnail__footer {
+        padding: $ui-content-thumbnail_footer--grid-padding;
+        background-color: $ui-content-thumbnail_actions--grid-background-color;
+        height: $ui-content-thumbnail_actions--grid-height;
+      }
+    }
+    // Line
+    &--line {
+      width: $ui-content-thumbnail--line-width;
+      height: $ui-content-thumbnail--line-height;
+      .ui-content-thumbnail__header {
+        padding-left: $ui-content-thumbnail_header--padding-left;
+        width: $ui-content-thumbnail_header--line-width;
+        .ui-content-thumbnail__icon {
+          color: $ui-content-thumbnail_header_icon--line-text-color;
+        }
+      }
+      .ui-content-thumbnail__title {
+        line-height: $ui-content-thumbnail_title--line-line-height;
+        font-size: $ui-content-thumbnail_title--line-font-size;
+        font-weight: $ui-content-thumbnail_title--line-font-weight;
+        padding: $ui-content-thumbnail_title--line-padding;
+        // first-child because row-reverse
+        > *:not(:first-child) {
+          margin-right: $ui-content-thumbnail_title--line-padding;
+          &::after {
+            content: '-';
+            margin-left: $ui-content-thumbnail_title--line-padding;
+          }
+        }
+      }
+      .ui-content-thumbnail__footer {
+        margin-right: $ui-content-thumbnail_footer--line-margin-right;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.ui-filter-text-input {
+  $this: &;
+
+  position: relative;
+  display: block;
+
+  &__input {
+    box-sizing: border-box;
+    padding-left: 25px;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+
+    &--not-empty {
+      padding-right: 25px;
+
+      + #{$this}__cancel {
+        display: block;
+      }
+    }
+  }
+
+  &__cancel,
+  &__icon {
+    position: absolute;
+    text-align: center;
+    font-size: inherit;
+  }
+
+  &__cancel {
+    display: none;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,399 @@
+@mixin ui-file-extension($file-extension-width: 84) {
+  $file-extension-scale: $file-extension-width / 84; //84 is the standard width of the icon
+
+  $ui-file-extension-font-family: $ui-primary-font-family-3 !default;
+  $ui-file-extension-bg-color: $ui-tertiary-bg-color !default;
+
+  .ui-file-extension {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 0;
+
+    &--title {
+      font-family: $ui-file-extension-font-family;
+      font-weight: normal;
+      line-height: 20px * $file-extension-scale;
+      font-size: 15px * $file-extension-scale;
+      text-align: center;
+      text-transform: uppercase;
+      color: $ui-file-extension-bg-color;
+      height: 24px * $file-extension-scale;
+      box-sizing: border-box;
+      width: 68px * $file-extension-scale !important;
+      font-style: normal;
+      position: relative;
+
+      &:after {
+        display: block;
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        z-index: -1;
+        box-sizing: border-box;
+        content: ' ';
+        border-style: solid;
+        border-width: 2px * $file-extension-scale;
+        height: 1px + 24px * $file-extension-scale;
+        width: 68px * $file-extension-scale !important;
+      }
+    }
+
+    &--icon {
+      height: 107px * $file-extension-scale;
+      width: 84px * $file-extension-scale;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+
+      &:before {
+        position: absolute;
+        width: 84px * $file-extension-scale;
+        height: 107px * $file-extension-scale;
+        background: transparent url('/assets/images/file-types.svg?v3');
+        background-size: 84.1px * $file-extension-scale 1600px *
+          $file-extension-scale;
+        background-repeat: no-repeat;
+        background-position: 0px * $file-extension-scale -1100px * $file-extension-scale;
+        content: ' ';
+        box-sizing: border-box;
+        z-index: -1;
+      }
+    }
+  }
+
+  .ui-file-extension--icon.ui-file-extension--title {
+    margin-top: 11px * $file-extension-scale;
+    margin-left: 8px * $file-extension-scale;
+    margin-right: 8px * $file-extension-scale;
+    margin-bottom: 72px * $file-extension-scale;
+
+    height: 24px * $file-extension-scale;
+    width: 68px * $file-extension-scale;
+
+    &:before {
+      top: -11px * $file-extension-scale;
+      left: -8px * $file-extension-scale;
+    }
+  }
+
+  .ui-file-extension {
+    &.xls,
+    &.xlsx,
+    &.ods,
+    &.xlt,
+    &.xltx {
+      &:after {
+        border-color: #2f4f28;
+        background-color: #558b46;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -110px * $file-extension-scale;
+      }
+    }
+
+    &.pptx,
+    &.ppt,
+    &.pps,
+    &.ppsx,
+    &.odp {
+      &:after {
+        border-color: #99461c;
+        background-color: #d76228;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale 0px *
+          $file-extension-scale;
+      }
+    }
+
+    &.doc,
+    &.docx,
+    &.odt,
+    &.dot,
+    &.dotx,
+    &.txt,
+    &.rtf,
+    &.md {
+      &:after {
+        background-color: #2e84bc;
+        border-color: #2a5174;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -220px * $file-extension-scale;
+      }
+    }
+
+    &.mp3,
+    &.wav,
+    &.ogg,
+    &.wma,
+    &.m4a,
+    &.m4p,
+    &.flac,
+    &.aiff,
+    &.aac {
+      &:after {
+        background-color: #a270a1;
+        border-color: #573d56;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -660px * $file-extension-scale;
+      }
+    }
+
+    &.pdf,
+    &.ps {
+      &:after {
+        background-color: #b32328;
+        border-color: #7f181b;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -330px * $file-extension-scale;
+      }
+    }
+
+    &.jpg,
+    &.svg,
+    &.png,
+    &.gif,
+    &.jpeg,
+    &.tga,
+    &.raw,
+    &.tiff,
+    &.bmp,
+    &.webp,
+    &.psd,
+    &.ai {
+      &:after {
+        background-color: #3d4b88;
+        border-color: #202748;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -990px * $file-extension-scale;
+      }
+    }
+
+    &.ggb,
+    &.geogebra {
+      &:after {
+        background-color: #9696fa;
+        border-color: #676767;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -880px * $file-extension-scale;
+      }
+    }
+
+    &.link,
+    &.lnk {
+      &:after {
+        background-color: #7584bc;
+        border-color: #424b6c;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+
+    &.zip,
+    &.rar {
+      &:after {
+        background-color: #6f3f88;
+        border-color: #40234f;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -550px * $file-extension-scale;
+      }
+    }
+
+    &.m4v,
+    &.mov,
+    &.flv,
+    &.wmv,
+    &.mkv,
+    &.webm,
+    &.vob,
+    &.ogv,
+    &.avi,
+    &.qt,
+    &.mp4,
+    &.asf,
+    &.mpg,
+    &.mpeg {
+      &:after {
+        background-color: #bc4346;
+        border-color: #7f2c2d;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -1210px * $file-extension-scale;
+      }
+    }
+
+    &.boek,
+    &.boek-e {
+      &:after {
+        background-color: #21a49d;
+        border-color: #146663;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -770px * $file-extension-scale;
+      }
+    }
+
+    &.oefening,
+    &[class*='ludo'] {
+      &:after {
+        background-color: #21a49d;
+        border-color: #146663;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -1320px * $file-extension-scale;
+      }
+    }
+
+    &.youtube {
+      &:after {
+        background-color: #cd201f;
+        border-color: #b32328;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+
+    &.drive {
+      &:after {
+        background-color: #09a058;
+        border-color: #057a42;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+
+    &.dropbox {
+      &:after {
+        background-color: #007ee5;
+        border-color: #06559e;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+    &.google-docs {
+      &:after {
+        background-color: #4285f4;
+        border-color: #157fdb;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+
+    &.presenter {
+      &:after {
+        background-color: #2266af;
+        border-color: #157fdb;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+
+    &.sharepoint {
+      &:after {
+        background-color: #094ab2;
+        border-color: #157fdb;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+
+    &.onedrive {
+      &:after {
+        background-color: #094ab2;
+        border-color: #157fdb;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+    &.smartschool {
+      &:after {
+        background-color: #ff520e;
+        border-color: #ff520e;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+    &.wikipedia {
+      &:after {
+        background-color: #c7c8ca;
+        border-color: #939598;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+    &.vimeo {
+      &:after {
+        background-color: #1ab7ea;
+        border-color: #10abff;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+    &.flickr {
+      &:after {
+        background-color: #ff0084;
+        border-color: #0063dc;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+    &.prezi {
+      &:after {
+        background-color: #318bff;
+        border-color: #0063dc;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+    &.wezooz {
+      &:after {
+        background-color: #e77543;
+        border-color: #e4642c;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+    &.wetransfer {
+      &:after {
+        background-color: #2aa9fb;
+        border-color: #079ffd;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -440px * $file-extension-scale;
+      }
+    }
+    &.algebrakit {
+      &:after {
+        background-color: #009fe3;
+        border-color: #034655;
+        letter-spacing: 0px;
+        font-size: 13px;
+      }
+      &:before {
+        background-position: 0px * $file-extension-scale -1428px * $file-extension-scale;
+      }
+    }
+  }
+}
