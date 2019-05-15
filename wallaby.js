@@ -48,7 +48,6 @@ module.exports = function(wallaby) {
     },
 
     setup: function(wallaby) {
-      require('./wallaby-test-setup');
       var jestConfig = require('./jest.config');
       jestConfig = Object.assign(
         require('jest-preset-angular/jest-preset'),
@@ -56,7 +55,8 @@ module.exports = function(wallaby) {
       );
       delete jestConfig.moduleNameMapper;
       jestConfig.transformIgnorePatterns.push('instrumented.*.(jsx?|html)$');
-
+      jestConfig.setupFilesAfterEnv = ['<rootDir>/wallaby-test-setup.js'];
+      
       if (!jestConfig.moduleNameMapper) {
         var paths = require('./tsconfig').compilerOptions.paths;
         var jestModuleMaps = {};
